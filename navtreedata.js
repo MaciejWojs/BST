@@ -24,7 +24,7 @@
 */
 var NAVTREE =
 [
-  [ "Lista dwukierunkowa C++", "index.html", [
+  [ "Drzewo przeszukiwań binarnych", "index.html", [
     [ "Pliki", "files.html", [
       [ "Lista plików", "files.html", "files_dup" ],
       [ "Składowe plików", "globals.html", [
