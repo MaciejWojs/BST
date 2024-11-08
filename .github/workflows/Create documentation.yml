@@ -4,7 +4,10 @@ on:
     branches:
       - main
     tags:
-      - '*.*.*'
+      - 'v*.*.*'
+
+env:
+  NEWEST_TAG: ${{github.ref_name}}
 
 jobs:
   Create_documentation:
@@ -14,17 +17,25 @@ jobs:
     steps:
       - name: Set up Git repository
         uses: actions/checkout@v4
+      - name: check for cache
+        uses: awalsh128/cache-apt-pkgs-action@latest
+        id: cache-packages
+        with:
+          packages: graphviz ghostscript
+          version: 1.0
+          execute_install_scripts: true
       - name: install packages
-        run: sudo apt update && sudo apt install -y graphviz
+        if: steps.cache-packages.outputs.cache-hit != 'true'
+        run: sudo apt update && sudo apt install -y graphviz ghostscript
 
-      - name: Preatify doxygen
+      - name: Prettify doxygen
         run: |
           latest_version=$(curl -s https://api.github.com/repos/jothepro/doxygen-awesome-css/releases/latest | jq -r '.tag_name')
           download_url="https://github.com/jothepro/doxygen-awesome-css/archive/refs/tags/${latest_version}.tar.gz"
           wget -q -O doxygen-awesome-css.tar.gz "$download_url"
 
           tar -xzf doxygen-awesome-css.tar.gz
-          rm -rf doxygen-awesome-css.tar.gz README.md
+          rm -rf doxygen-awesome-css.tar.gz
           mv doxygen-awesome-css*/ doxygen-awesome-css/
           cp doxygen-awesome-css/doxygen-awesome.css . 
           cp doxygen-awesome-css/doxygen-awesome-sidebar-only.css .
@@ -32,16 +43,10 @@ jobs:
           echo "DISABLE_INDEX          = NO" >> Doxyfile
           echo "FULL_SIDEBAR           = NO" >> Doxyfile
           echo "HTML_EXTRA_STYLESHEET  = doxygen-awesome.css doxygen-awesome-sidebar-only.css" >> Doxyfile
+          echo PROJECT_NUMBER         = ${NEWEST_TAG} >> Doxyfile
 
-      - name: Generate Doxygen Documentation without LaTeX
-        if: ${{ ! startsWith(github.ref, 'refs/tags/') }}
+      - name: Generate Doxygen Documentation
         uses: mattnotmitt/doxygen-action@edge
-
-      - name: Generate Doxygen Documentation with LaTeX
-        if: startsWith(github.ref, 'refs/tags/')
-        uses: mattnotmitt/doxygen-action@edge
-        with:
-          enable-latex: true
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v4
@@ -49,15 +54,28 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./docs/html
 
+      - name: compile doxygen latex documentation
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: xu-cheng/latex-action@3.2.0
+        with:
+          latexmk_shell_escape: true
+          working_directory: ./docs/latex/
+          root_file: refman.tex
+
       - name: Rename PDF file
         if: startsWith(github.ref, 'refs/tags/')
         run: |
           cp ./docs/latex/refman.pdf ./main.pdf
-          sudo chmod 777 ./docs/latex/refman.pdf 
+          sudo chmod 777 ./docs/latex/refman.pdf
 
       - name: release the pdf
         if: startsWith(github.ref, 'refs/tags/')
         uses: ncipollo/release-action@v1
         with:
-          artifacts: "main.pdf"
           allowUpdates: true
+          artifacts: "main.pdf"
+
+      - name: Webhook DC notification
+        if: startsWith(github.ref, 'refs/tags/')
+        run: |
+          curl -s -H "Content-Type: application/json" -d '{"content": "Stworzono dokumentację @everyone"}' ${{ secrets.DISCORD_WEBHOOK_URL }} &> /dev/null
