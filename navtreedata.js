@@ -24,7 +24,7 @@
 */
 var NAVTREE =
 [
-  [ "Binarne drzewo poszukiwań", "index.html", [
+  [ "Binary Search Tree", "index.html", [
     [ "Pliki", "files.html", [
       [ "Lista plików", "files.html", "files_dup" ],
       [ "Składowe plików", "globals.html", [
