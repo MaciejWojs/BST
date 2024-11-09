@@ -8,6 +8,7 @@ on:
 
 env:
   NEWEST_TAG: ${{github.ref_name}}
+  REPO: ${{github.repository}}
 
 jobs:
   Create_documentation:
@@ -27,6 +28,18 @@ jobs:
       - name: install packages
         if: steps.cache-packages.outputs.cache-hit != 'true'
         run: sudo apt update && sudo apt install -y graphviz ghostscript
+
+      - name: Cache Docker images
+        if: startsWith(github.ref, 'refs/tags/')
+        id: docker_cache
+        uses: ScribeMD/docker-cache@0.5.0
+        with:
+          key: docker-${{ runner.os }}-${{ hashFiles('Dockerfile') }}
+
+
+      - name: Pull TeX Live Docker image if not cached
+        if: ${{ startsWith(github.ref, 'refs/tags/') && steps.docker_cache.outputs.cache-hit != 'true' }}
+        run: docker pull ghcr.io/xu-cheng/texlive-full:latest
 
       - name: Prettify doxygen
         run: |
@@ -51,7 +64,7 @@ jobs:
       - name: doxygen project version from last release
         if: ${{ ! startsWith(github.ref, 'refs/tags/') }}
         run: |
-          newest_build=$(curl -s https://api.github.com/repos/MaciejWojs/notepad-app/releases/latest | jq -r '.tag_name')
+          newest_build=$(curl -s https://api.github.com/repos/${{env.REPO}}/releases/latest | jq -r '.tag_name')
           echo PROJECT_NUMBER         = ${newest_build} >> Doxyfile
         
       - name: Generate Doxygen Documentation

@@ -1,6 +1,8 @@
 name: Upload artifacts
 on:
   push:
+    branches:
+      - main
     tags:
       - '*.*.*'
 
@@ -11,11 +13,22 @@ jobs:
       contents: write
     steps:
       - name: Set up Git repository
+        if: startsWith(github.ref, 'refs/tags/')
         uses: actions/checkout@v4
+
+      - name: check for cache
+        uses: awalsh128/cache-apt-pkgs-action@latest
+        id: cache-packages
+        with:
+          packages: mingw-w64 g++
+          version: 1.0
+          execute_install_scripts: true
       - name: install packages
-        run: sudo apt update && sudo apt upgrade -y && sudo apt install mingw-w64 -y
+        if: ${{ startsWith(github.ref, 'refs/tags/') && steps.cache-packages.outputs.cache-hit != 'true'}}
+        run: sudo apt update && sudo apt install mingw-w64 g++ -y
 
       - name: compile
+        if: startsWith(github.ref, 'refs/tags/')
         run: |
           /usr/bin/x86_64-w64-mingw32-g++-win32 -std=c++20 -Wall -fdiagnostics-color=always -static -o output.exe *.cpp
           g++ -std=c++20 -Wall -o output.out *.cpp
