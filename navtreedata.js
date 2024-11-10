@@ -25,11 +25,22 @@
 var NAVTREE =
 [
   [ "Binary Search Tree", "index.html", [
+    [ "Klasy", "annotated.html", [
+      [ "Lista klas", "annotated.html", "annotated_dup" ],
+      [ "Indeks klas", "classes.html", null ],
+      [ "Składowe klas", "functions.html", [
+        [ "Wszystko", "functions.html", null ],
+        [ "Funkcje", "functions_func.html", null ],
+        [ "Zmienne", "functions_vars.html", null ]
+      ] ]
+    ] ],
     [ "Pliki", "files.html", [
       [ "Lista plików", "files.html", "files_dup" ],
       [ "Składowe plików", "globals.html", [
         [ "Wszystko", "globals.html", null ],
-        [ "Funkcje", "globals_func.html", null ]
+        [ "Funkcje", "globals_func.html", null ],
+        [ "Wyliczenia", "globals_enum.html", null ],
+        [ "Wartości wyliczeń", "globals_eval.html", null ]
       ] ]
     ] ]
   ] ]
@@ -37,7 +48,7 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"bst_8cpp.html"
+"BST_8cpp.html"
 ];
 
 var SYNCONMSG = 'kliknij żeby wyłączyć pokazywanie otwartego elementu w drzewie zawartości';

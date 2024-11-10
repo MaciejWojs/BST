@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['bst_2ecpp_0',['bst.cpp',['../bst_8cpp.html',1,'']]],
-  ['bst_2ehpp_1',['bst.hpp',['../bst_8hpp.html',1,'']]]
+  ['add_5fnode_0',['add_node',['../classBST.html#ace00747dfdf4d6279586c8e837105233',1,'BST']]]
 ];

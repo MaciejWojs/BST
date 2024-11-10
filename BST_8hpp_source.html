@@ -1,0 +1,180 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pl">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.12.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Binary Search Tree: Plik źródłowy BST.hpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Binary Search Tree<span id="projectnumber">&#160;v0.0.4</span>
+   </div>
+   <div id="projectbrief">Implementacja BST w języku C++</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano za pomocą Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Szukaj',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('BST_8hpp_source.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Wczytywanie...</div>
+<div class="SRStatus" id="Searching">Szukanie...</div>
+<div class="SRStatus" id="NoMatches">Brak dopasowań</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">BST.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="BST_8hpp.html">Idź do dokumentacji tego pliku.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef BST_HPP</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define BST_HPP</span></div>
+<div class="foldopen" id="foldopen00003" data-start="{" data-end="};">
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno"><a class="line" href="BST_8hpp.html#a538b580ce6370e754b5e9bfdff772eab">    3</a></span><span class="keyword">enum</span> <a class="code hl_enumeration" href="BST_8hpp.html#a538b580ce6370e754b5e9bfdff772eab">display_mode</a> {</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno"><a class="line" href="BST_8hpp.html#a538b580ce6370e754b5e9bfdff772eaba541a7d029edbe0dc4855fa23ba23162b">    4</a></span>    <a class="code hl_enumvalue" href="BST_8hpp.html#a538b580ce6370e754b5e9bfdff772eaba541a7d029edbe0dc4855fa23ba23162b">INORDER</a>,</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno"><a class="line" href="BST_8hpp.html#a538b580ce6370e754b5e9bfdff772eabacd9d91cf59c093fdfa2b1736a26125ce">    5</a></span>    <a class="code hl_enumvalue" href="BST_8hpp.html#a538b580ce6370e754b5e9bfdff772eabacd9d91cf59c093fdfa2b1736a26125ce">PREORDER</a>,</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>    <a class="code hl_enumvalue" href="BST_8hpp.html#a538b580ce6370e754b5e9bfdff772eaba9ab94412bf77ddc567d8cb5cd2996d44">POSTORDER</a></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="BST_8hpp.html#a538b580ce6370e754b5e9bfdff772eaba9ab94412bf77ddc567d8cb5cd2996d44">    7</a></span>};</div>
+</div>
+<div class="foldopen" id="foldopen00008" data-start="{" data-end="};">
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="structNode.html">    8</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structNode.html">Node</a> {</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="structNode.html#aaa0cd30d78a90c5a6ab64eb3d58b8f87">    9</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="structNode.html#aaa0cd30d78a90c5a6ab64eb3d58b8f87">value</a>;</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="structNode.html#a7328862eaa6dea28018326549b3294d3">   10</a></span>    <a class="code hl_struct" href="structNode.html">Node</a>* <a class="code hl_variable" href="structNode.html#a7328862eaa6dea28018326549b3294d3">right</a>;</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="structNode.html#ab8c667ac8fdb120ed4c031682a9cdaee">   11</a></span>    <a class="code hl_struct" href="structNode.html">Node</a>* <a class="code hl_variable" href="structNode.html#ab8c667ac8fdb120ed4c031682a9cdaee">left</a>;</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="structNode.html#ad8184598cdea70e4bbdfd76f2b0f9e85">   12</a></span>    <a class="code hl_struct" href="structNode.html">Node</a>* <a class="code hl_variable" href="structNode.html#ad8184598cdea70e4bbdfd76f2b0f9e85">parent</a>;</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <a class="code hl_function" href="structNode.html#ad7a34779cad45d997bfd6d3d8043c75f">Node</a>();</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <a class="code hl_function" href="structNode.html#ad7a34779cad45d997bfd6d3d8043c75f">Node</a>(<span class="keywordtype">int</span> _value);</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <a class="code hl_function" href="structNode.html#aa0840c3cb5c7159be6d992adecd2097c">~Node</a>();</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="structNode.html#a6efd99c5bc23fc39a5e58d12a91eba70">set_value</a>(<span class="keywordtype">int</span> a);</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="keywordtype">int</span> <a class="code hl_function" href="structNode.html#a4d5e48245facb410f52404216af80c20">get_value</a>();</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>};</div>
+</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="foldopen" id="foldopen00023" data-start="{" data-end="};">
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="classBST.html">   23</a></span><span class="keyword">class </span><a class="code hl_class" href="classBST.html">BST</a> {</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <a class="code hl_struct" href="structNode.html">Node</a>* root;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <a class="code hl_function" href="classBST.html#abc17123a0367c3b8ad0382eeb3ad3178">BST</a>();</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <a class="code hl_function" href="classBST.html#aff9c7948fbba37844d2893b920ddc238">~BST</a>();</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="classBST.html#ace00747dfdf4d6279586c8e837105233">   29</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classBST.html#ace00747dfdf4d6279586c8e837105233">add_node</a>();</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="classBST.html#ababcb2cdc6743b8de0026804337f0231">   30</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classBST.html#ababcb2cdc6743b8de0026804337f0231">delete_node</a>();</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="classBST.html#ab57605c2f6cbe553f00885a8e29525c0">   31</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classBST.html#ab57605c2f6cbe553f00885a8e29525c0">purge</a>();</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classBST.html#abacd7ba4914718e5db56257a57616554">display</a>(<a class="code hl_enumeration" href="BST_8hpp.html#a538b580ce6370e754b5e9bfdff772eab">display_mode</a> mode);</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="classBST.html#adc7b5abe38090a2d813c1dce3a5a1979">   33</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classBST.html#adc7b5abe38090a2d813c1dce3a5a1979">save</a>();</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>};</div>
+</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="preprocessor">#endif </span><span class="comment">/* BST_HPP */</span><span class="preprocessor"></span></div>
+<div class="ttc" id="aBST_8hpp_html_a538b580ce6370e754b5e9bfdff772eab"><div class="ttname"><a href="BST_8hpp.html#a538b580ce6370e754b5e9bfdff772eab">display_mode</a></div><div class="ttdeci">display_mode</div><div class="ttdef"><b>Definicja</b> BST.hpp:3</div></div>
+<div class="ttc" id="aBST_8hpp_html_a538b580ce6370e754b5e9bfdff772eaba541a7d029edbe0dc4855fa23ba23162b"><div class="ttname"><a href="BST_8hpp.html#a538b580ce6370e754b5e9bfdff772eaba541a7d029edbe0dc4855fa23ba23162b">INORDER</a></div><div class="ttdeci">@ INORDER</div><div class="ttdef"><b>Definicja</b> BST.hpp:4</div></div>
+<div class="ttc" id="aBST_8hpp_html_a538b580ce6370e754b5e9bfdff772eaba9ab94412bf77ddc567d8cb5cd2996d44"><div class="ttname"><a href="BST_8hpp.html#a538b580ce6370e754b5e9bfdff772eaba9ab94412bf77ddc567d8cb5cd2996d44">POSTORDER</a></div><div class="ttdeci">@ POSTORDER</div><div class="ttdef"><b>Definicja</b> BST.hpp:6</div></div>
+<div class="ttc" id="aBST_8hpp_html_a538b580ce6370e754b5e9bfdff772eabacd9d91cf59c093fdfa2b1736a26125ce"><div class="ttname"><a href="BST_8hpp.html#a538b580ce6370e754b5e9bfdff772eabacd9d91cf59c093fdfa2b1736a26125ce">PREORDER</a></div><div class="ttdeci">@ PREORDER</div><div class="ttdef"><b>Definicja</b> BST.hpp:5</div></div>
+<div class="ttc" id="aclassBST_html"><div class="ttname"><a href="classBST.html">BST</a></div><div class="ttdef"><b>Definicja</b> BST.hpp:23</div></div>
+<div class="ttc" id="aclassBST_html_ab57605c2f6cbe553f00885a8e29525c0"><div class="ttname"><a href="classBST.html#ab57605c2f6cbe553f00885a8e29525c0">BST::purge</a></div><div class="ttdeci">void purge()</div></div>
+<div class="ttc" id="aclassBST_html_ababcb2cdc6743b8de0026804337f0231"><div class="ttname"><a href="classBST.html#ababcb2cdc6743b8de0026804337f0231">BST::delete_node</a></div><div class="ttdeci">void delete_node()</div></div>
+<div class="ttc" id="aclassBST_html_abacd7ba4914718e5db56257a57616554"><div class="ttname"><a href="classBST.html#abacd7ba4914718e5db56257a57616554">BST::display</a></div><div class="ttdeci">void display(display_mode mode)</div><div class="ttdef"><b>Definicja</b> BST.cpp:24</div></div>
+<div class="ttc" id="aclassBST_html_abc17123a0367c3b8ad0382eeb3ad3178"><div class="ttname"><a href="classBST.html#abc17123a0367c3b8ad0382eeb3ad3178">BST::BST</a></div><div class="ttdeci">BST()</div><div class="ttdef"><b>Definicja</b> BST.cpp:19</div></div>
+<div class="ttc" id="aclassBST_html_ace00747dfdf4d6279586c8e837105233"><div class="ttname"><a href="classBST.html#ace00747dfdf4d6279586c8e837105233">BST::add_node</a></div><div class="ttdeci">void add_node()</div></div>
+<div class="ttc" id="aclassBST_html_adc7b5abe38090a2d813c1dce3a5a1979"><div class="ttname"><a href="classBST.html#adc7b5abe38090a2d813c1dce3a5a1979">BST::save</a></div><div class="ttdeci">void save()</div></div>
+<div class="ttc" id="aclassBST_html_aff9c7948fbba37844d2893b920ddc238"><div class="ttname"><a href="classBST.html#aff9c7948fbba37844d2893b920ddc238">BST::~BST</a></div><div class="ttdeci">~BST()</div><div class="ttdef"><b>Definicja</b> BST.cpp:21</div></div>
+<div class="ttc" id="astructNode_html"><div class="ttname"><a href="structNode.html">Node</a></div><div class="ttdef"><b>Definicja</b> BST.hpp:8</div></div>
+<div class="ttc" id="astructNode_html_a4d5e48245facb410f52404216af80c20"><div class="ttname"><a href="structNode.html#a4d5e48245facb410f52404216af80c20">Node::get_value</a></div><div class="ttdeci">int get_value()</div><div class="ttdef"><b>Definicja</b> BST.cpp:14</div></div>
+<div class="ttc" id="astructNode_html_a6efd99c5bc23fc39a5e58d12a91eba70"><div class="ttname"><a href="structNode.html#a6efd99c5bc23fc39a5e58d12a91eba70">Node::set_value</a></div><div class="ttdeci">void set_value(int a)</div><div class="ttdef"><b>Definicja</b> BST.cpp:10</div></div>
+<div class="ttc" id="astructNode_html_a7328862eaa6dea28018326549b3294d3"><div class="ttname"><a href="structNode.html#a7328862eaa6dea28018326549b3294d3">Node::right</a></div><div class="ttdeci">Node * right</div><div class="ttdef"><b>Definicja</b> BST.hpp:10</div></div>
+<div class="ttc" id="astructNode_html_aa0840c3cb5c7159be6d992adecd2097c"><div class="ttname"><a href="structNode.html#aa0840c3cb5c7159be6d992adecd2097c">Node::~Node</a></div><div class="ttdeci">~Node()</div><div class="ttdef"><b>Definicja</b> BST.cpp:8</div></div>
+<div class="ttc" id="astructNode_html_aaa0cd30d78a90c5a6ab64eb3d58b8f87"><div class="ttname"><a href="structNode.html#aaa0cd30d78a90c5a6ab64eb3d58b8f87">Node::value</a></div><div class="ttdeci">int value</div><div class="ttdef"><b>Definicja</b> BST.hpp:9</div></div>
+<div class="ttc" id="astructNode_html_ab8c667ac8fdb120ed4c031682a9cdaee"><div class="ttname"><a href="structNode.html#ab8c667ac8fdb120ed4c031682a9cdaee">Node::left</a></div><div class="ttdeci">Node * left</div><div class="ttdef"><b>Definicja</b> BST.hpp:11</div></div>
+<div class="ttc" id="astructNode_html_ad7a34779cad45d997bfd6d3d8043c75f"><div class="ttname"><a href="structNode.html#ad7a34779cad45d997bfd6d3d8043c75f">Node::Node</a></div><div class="ttdeci">Node()</div><div class="ttdef"><b>Definicja</b> BST.cpp:4</div></div>
+<div class="ttc" id="astructNode_html_ad8184598cdea70e4bbdfd76f2b0f9e85"><div class="ttname"><a href="structNode.html#ad8184598cdea70e4bbdfd76f2b0f9e85">Node::parent</a></div><div class="ttdeci">Node * parent</div><div class="ttdef"><b>Definicja</b> BST.hpp:12</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="BST_8hpp.html">BST.hpp</a></li>
+    <li class="footer">Wygenerowano za pomocą <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+  </ul>
+</div>
+</body>
+</html>

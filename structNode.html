@@ -1,0 +1,303 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pl">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.12.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Binary Search Tree: Dokumentacja struktury Node</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Binary Search Tree<span id="projectnumber">&#160;v0.0.4</span>
+   </div>
+   <div id="projectbrief">Implementacja BST w języku C++</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano za pomocą Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Szukaj',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('structNode.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Wczytywanie...</div>
+<div class="SRStatus" id="Searching">Szukanie...</div>
+<div class="SRStatus" id="NoMatches">Brak dopasowań</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Metody publiczne</a> &#124;
+<a href="#pub-attribs">Atrybuty publiczne</a> &#124;
+<a href="structNode-members.html">Lista wszystkich składowych</a>  </div>
+  <div class="headertitle"><div class="title">Dokumentacja struktury Node</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="BST_8hpp_source.html">BST.hpp</a>&gt;</code></p>
+<div class="dynheader">
+Diagram współpracy dla Node:</div>
+<div class="dyncontent">
+<div class="center"><img src="structNode__coll__graph.png" border="0" usemap="#aNode_coll__map" alt="Collaboration graph"/></div>
+<map name="aNode_coll__map" id="aNode_coll__map">
+<area shape="rect" title=" " alt="" coords="5,15,58,41"/>
+<area shape="poly" title=" " alt="" coords="74,21,84,28,75,34,58,35,58,30,74,29,79,28,72,26"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legenda</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Metody publiczne</h2></td></tr>
+<tr class="memitem:ad7a34779cad45d997bfd6d3d8043c75f" id="r_ad7a34779cad45d997bfd6d3d8043c75f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad7a34779cad45d997bfd6d3d8043c75f">Node</a> ()</td></tr>
+<tr class="separator:ad7a34779cad45d997bfd6d3d8043c75f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a841ba1eeca87d9738c0a21fb3e98f48a" id="r_a841ba1eeca87d9738c0a21fb3e98f48a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a841ba1eeca87d9738c0a21fb3e98f48a">Node</a> (int _value)</td></tr>
+<tr class="separator:a841ba1eeca87d9738c0a21fb3e98f48a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa0840c3cb5c7159be6d992adecd2097c" id="r_aa0840c3cb5c7159be6d992adecd2097c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa0840c3cb5c7159be6d992adecd2097c">~Node</a> ()</td></tr>
+<tr class="separator:aa0840c3cb5c7159be6d992adecd2097c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6efd99c5bc23fc39a5e58d12a91eba70" id="r_a6efd99c5bc23fc39a5e58d12a91eba70"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6efd99c5bc23fc39a5e58d12a91eba70">set_value</a> (int a)</td></tr>
+<tr class="separator:a6efd99c5bc23fc39a5e58d12a91eba70"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d5e48245facb410f52404216af80c20" id="r_a4d5e48245facb410f52404216af80c20"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4d5e48245facb410f52404216af80c20">get_value</a> ()</td></tr>
+<tr class="separator:a4d5e48245facb410f52404216af80c20"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Atrybuty publiczne</h2></td></tr>
+<tr class="memitem:aaa0cd30d78a90c5a6ab64eb3d58b8f87" id="r_aaa0cd30d78a90c5a6ab64eb3d58b8f87"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaa0cd30d78a90c5a6ab64eb3d58b8f87">value</a></td></tr>
+<tr class="separator:aaa0cd30d78a90c5a6ab64eb3d58b8f87"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7328862eaa6dea28018326549b3294d3" id="r_a7328862eaa6dea28018326549b3294d3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structNode.html">Node</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7328862eaa6dea28018326549b3294d3">right</a></td></tr>
+<tr class="separator:a7328862eaa6dea28018326549b3294d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab8c667ac8fdb120ed4c031682a9cdaee" id="r_ab8c667ac8fdb120ed4c031682a9cdaee"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structNode.html">Node</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab8c667ac8fdb120ed4c031682a9cdaee">left</a></td></tr>
+<tr class="separator:ab8c667ac8fdb120ed4c031682a9cdaee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8184598cdea70e4bbdfd76f2b0f9e85" id="r_ad8184598cdea70e4bbdfd76f2b0f9e85"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structNode.html">Node</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad8184598cdea70e4bbdfd76f2b0f9e85">parent</a></td></tr>
+<tr class="separator:ad8184598cdea70e4bbdfd76f2b0f9e85"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Dokumentacja konstruktora i destruktora</h2>
+<a id="ad7a34779cad45d997bfd6d3d8043c75f" name="ad7a34779cad45d997bfd6d3d8043c75f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad7a34779cad45d997bfd6d3d8043c75f">&#9670;&#160;</a></span>Node() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Node::Node </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a841ba1eeca87d9738c0a21fb3e98f48a" name="a841ba1eeca87d9738c0a21fb3e98f48a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a841ba1eeca87d9738c0a21fb3e98f48a">&#9670;&#160;</a></span>Node() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Node::Node </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>_value</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa0840c3cb5c7159be6d992adecd2097c" name="aa0840c3cb5c7159be6d992adecd2097c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa0840c3cb5c7159be6d992adecd2097c">&#9670;&#160;</a></span>~Node()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Node::~Node </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Dokumentacja funkcji składowych</h2>
+<a id="a4d5e48245facb410f52404216af80c20" name="a4d5e48245facb410f52404216af80c20"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d5e48245facb410f52404216af80c20">&#9670;&#160;</a></span>get_value()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Node::get_value </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6efd99c5bc23fc39a5e58d12a91eba70" name="a6efd99c5bc23fc39a5e58d12a91eba70"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6efd99c5bc23fc39a5e58d12a91eba70">&#9670;&#160;</a></span>set_value()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Node::set_value </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>a</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Dokumentacja atrybutów składowych</h2>
+<a id="ab8c667ac8fdb120ed4c031682a9cdaee" name="ab8c667ac8fdb120ed4c031682a9cdaee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab8c667ac8fdb120ed4c031682a9cdaee">&#9670;&#160;</a></span>left</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structNode.html">Node</a>* Node::left</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad8184598cdea70e4bbdfd76f2b0f9e85" name="ad8184598cdea70e4bbdfd76f2b0f9e85"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad8184598cdea70e4bbdfd76f2b0f9e85">&#9670;&#160;</a></span>parent</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structNode.html">Node</a>* Node::parent</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7328862eaa6dea28018326549b3294d3" name="a7328862eaa6dea28018326549b3294d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7328862eaa6dea28018326549b3294d3">&#9670;&#160;</a></span>right</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structNode.html">Node</a>* Node::right</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aaa0cd30d78a90c5a6ab64eb3d58b8f87" name="aaa0cd30d78a90c5a6ab64eb3d58b8f87"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa0cd30d78a90c5a6ab64eb3d58b8f87">&#9670;&#160;</a></span>value</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Node::value</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>Dokumentacja dla tej struktury została wygenerowana z plików:<ul>
+<li><a class="el" href="BST_8hpp_source.html">BST.hpp</a></li>
+<li><a class="el" href="BST_8cpp.html">BST.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="structNode.html">Node</a></li>
+    <li class="footer">Wygenerowano za pomocą <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+  </ul>
+</div>
+</body>
+</html>
