@@ -9,6 +9,7 @@ on:
 env:
   NEWEST_TAG: ${{github.ref_name}}
   REPO: ${{github.repository}}
+  FILE_NAME: main
 
 jobs:
   Create_documentation:
@@ -69,14 +70,36 @@ jobs:
         
       - name: Generate Doxygen Documentation
         uses: mattnotmitt/doxygen-action@edge
-
+        
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./docs/html
 
-      - name: compile doxygen latex documentation
+          
+      - name: compile doxygen Polish latex documentation
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: xu-cheng/latex-action@3.2.0
+        with:
+            extra_system_packages: "inkscape"
+            latexmk_shell_escape: true
+            working_directory: ./docs/latex/
+            root_file: refman.tex
+            
+      - name: Copy polish PDF
+        if: startsWith(github.ref, 'refs/tags/')
+        run: |
+          cp ./docs/latex/refman.pdf ./pl-${{env.FILE_NAME}}.pdf
+          rm -rf ./docs
+      
+      - name: Change Doxyfile language
+        run: sed -i 's/OUTPUT_LANGUAGE        = Polish/OUTPUT_LANGUAGE        = English/' Doxyfile
+
+      - name: Generate Doxygen Documentation
+        uses: mattnotmitt/doxygen-action@edge
+
+      - name: compile doxygen English latex documentation
         if: startsWith(github.ref, 'refs/tags/')
         uses: xu-cheng/latex-action@3.2.0
         with:
@@ -85,18 +108,17 @@ jobs:
           working_directory: ./docs/latex/
           root_file: refman.tex
 
-      - name: Rename PDF file
+      - name: Copy english PDF
         if: startsWith(github.ref, 'refs/tags/')
         run: |
-          cp ./docs/latex/refman.pdf ./main.pdf
-          sudo chmod 777 ./docs/latex/refman.pdf
+          cp ./docs/latex/refman.pdf ./en-${{env.FILE_NAME}}.pdf
 
       - name: release the pdf
         if: startsWith(github.ref, 'refs/tags/')
         uses: ncipollo/release-action@v1
         with:
           allowUpdates: true
-          artifacts: "main.pdf"
+          artifacts: "pl-${{env.FILE_NAME}}.pdf en-${{env.FILE_NAME}}.pdf"
 
       - name: Webhook DC notification
         if: startsWith(github.ref, 'refs/tags/')
