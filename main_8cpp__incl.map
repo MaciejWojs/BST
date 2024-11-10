@@ -2,6 +2,6 @@
 <area shape="rect" id="Node000001" title=" " alt="" coords="52,5,126,31"/>
 <area shape="rect" id="Node000002" title=" " alt="" coords="5,79,77,105"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="83,33,60,67,55,64,79,30"/>
-<area shape="rect" id="Node000003" href="$BST_8hpp.html" title=" " alt="" coords="101,79,173,105"/>
+<area shape="rect" id="Node000003" href="$BST_8hpp.html" title="Plik nagłówkowy implementacji drzewa BST." alt="" coords="101,79,173,105"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="99,30,123,64,118,67,95,33"/>
 </map>
