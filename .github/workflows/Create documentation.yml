@@ -7,39 +7,44 @@ on:
       - 'v*.*.*'
 
 env:
-  NEWEST_TAG: ${{github.ref_name}}
-  REPO: ${{github.repository}}
+  NEWEST_TAG: ${{ github.ref_name }}
+  REPO: ${{ github.repository }}
   FILE_NAME: main
+  IS_TAG: ${{ startsWith(github.ref, 'refs/tags/') }}
+  LATEX_DIR: ./docs/latex/
+  HTML_DIR: ./docs/html
 
 jobs:
   Create_documentation:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+
     steps:
       - name: Set up Git repository
         uses: actions/checkout@v4
-      - name: check for cache
+
+      - name: Check for cache
         uses: awalsh128/cache-apt-pkgs-action@latest
         id: cache-packages
         with:
           packages: graphviz ghostscript
           version: 1.0
           execute_install_scripts: true
-      - name: install packages
+
+      - name: Install required packages
         if: steps.cache-packages.outputs.cache-hit != 'true'
         run: sudo apt update && sudo apt install -y graphviz ghostscript
 
       - name: Cache Docker images
-        if: startsWith(github.ref, 'refs/tags/')
+        if: env.IS_TAG == 'true'
         id: docker_cache
         uses: ScribeMD/docker-cache@0.5.0
         with:
           key: docker-${{ runner.os }}-${{ hashFiles('Dockerfile') }}
 
-
       - name: Pull TeX Live Docker image if not cached
-        if: ${{ startsWith(github.ref, 'refs/tags/') && steps.docker_cache.outputs.cache-hit != 'true' }}
+        if: env.IS_TAG == 'true' && steps.docker_cache.outputs.cache-hit != 'true'
         run: docker pull ghcr.io/xu-cheng/texlive-full:latest
 
       - name: Prettify doxygen
@@ -49,78 +54,73 @@ jobs:
           wget -q -O doxygen-awesome-css.tar.gz "$download_url"
 
           tar -xzf doxygen-awesome-css.tar.gz
-          rm -rf doxygen-awesome-css.tar.gz
           mv doxygen-awesome-css*/ doxygen-awesome-css/
-          cp doxygen-awesome-css/doxygen-awesome.css . 
-          cp doxygen-awesome-css/doxygen-awesome-sidebar-only.css .
+          cp doxygen-awesome-css/doxygen-awesome.css doxygen-awesome-css/doxygen-awesome-sidebar-only.css -t . 
           echo "GENERATE_TREEVIEW      = YES" >> Doxyfile
           echo "DISABLE_INDEX          = NO" >> Doxyfile
           echo "FULL_SIDEBAR           = NO" >> Doxyfile
           echo "HTML_EXTRA_STYLESHEET  = doxygen-awesome.css doxygen-awesome-sidebar-only.css" >> Doxyfile
 
-      - name: doxygen project version from tags
-        if: startsWith(github.ref, 'refs/tags/')
-        run: echo PROJECT_NUMBER         = ${NEWEST_TAG} >> Doxyfile
-      
-      - name: doxygen project version from last release
-        if: ${{ ! startsWith(github.ref, 'refs/tags/') }}
+      - name: Set Doxygen project version
         run: |
-          newest_build=$(curl -s https://api.github.com/repos/${{env.REPO}}/releases/latest | jq -r '.tag_name')
-          echo PROJECT_NUMBER         = ${newest_build} >> Doxyfile
-        
+          if [ "${{ env.IS_TAG }}" = "true" ]; then
+            echo PROJECT_NUMBER = ${NEWEST_TAG} >> Doxyfile
+          else
+            latest_tag=$(curl -s https://api.github.com/repos/${{ env.REPO }}/releases/latest | jq -r '.tag_name')
+            echo PROJECT_NUMBER = ${latest_tag} >> Doxyfile
+          fi
+
       - name: Generate Doxygen Documentation
         uses: mattnotmitt/doxygen-action@edge
-        
-      - name: Deploy
+
+      - name: Deploy HTML Documentation
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./docs/html
+          publish_dir: ${{env.HTML_DIR}}
 
-          
-      - name: compile doxygen Polish latex documentation
-        if: startsWith(github.ref, 'refs/tags/')
-        uses: xu-cheng/latex-action@3.2.0
-        with:
-            extra_system_packages: "inkscape"
-            latexmk_shell_escape: true
-            working_directory: ./docs/latex/
-            root_file: refman.tex
-            
-      - name: Copy polish PDF
-        if: startsWith(github.ref, 'refs/tags/')
-        run: |
-          cp ./docs/latex/refman.pdf ./pl-${{env.FILE_NAME}}.pdf
-
-      
-      - name: Change Doxyfile language
-        run: sed -i 's/OUTPUT_LANGUAGE        = Polish/OUTPUT_LANGUAGE        = English/' Doxyfile
-
-      - name: Generate Doxygen Documentation
-        uses: mattnotmitt/doxygen-action@edge
-
-      - name: compile doxygen English latex documentation
-        if: startsWith(github.ref, 'refs/tags/')
+      - name: Compile Polish PDF
+        if: env.IS_TAG == 'true'
         uses: xu-cheng/latex-action@3.2.0
         with:
           extra_system_packages: "inkscape"
           latexmk_shell_escape: true
-          working_directory: ./docs/latex/
+          working_directory: ${{env.LATEX_DIR}}
           root_file: refman.tex
 
-      - name: Copy english PDF
-        if: startsWith(github.ref, 'refs/tags/')
-        run: |
-          cp ./docs/latex/refman.pdf ./en-${{env.FILE_NAME}}.pdf
+      - name: Copy Polish PDF
+        if: env.IS_TAG == 'true'
+        run: cp ${{env.LATEX_DIR}}refman.pdf ./pl-${{ env.FILE_NAME }}.pdf
 
-      - name: release the pdf
-        if: startsWith(github.ref, 'refs/tags/')
+      - name: Change Doxyfile language to English
+        if: env.IS_TAG == 'true'
+        run: sed -i 's/OUTPUT_LANGUAGE        = Polish/OUTPUT_LANGUAGE        = English/' Doxyfile
+
+      - name: Generate English Doxygen Documentation
+        if: env.IS_TAG == 'true'
+        uses: mattnotmitt/doxygen-action@edge
+
+      - name: Compile English PDF
+        if: env.IS_TAG == 'true'
+        uses: xu-cheng/latex-action@3.2.0
+        with:
+          extra_system_packages: "inkscape"
+          latexmk_shell_escape: true
+          working_directory: ${{env.LATEX_DIR}}
+          root_file: refman.tex
+
+      - name: Copy English PDF
+        if: env.IS_TAG == 'true'
+        run: cp ${{env.LATEX_DIR}}refman.pdf ./en-${{ env.FILE_NAME }}.pdf
+
+      - name: Release PDFs
+        if: env.IS_TAG == 'true'
         uses: ncipollo/release-action@v1
         with:
           allowUpdates: true
-          artifacts: "pl-${{env.FILE_NAME}}.pdf,en-${{env.FILE_NAME}}.pdf"
+          artifacts: "pl-${{ env.FILE_NAME }}.pdf,en-${{ env.FILE_NAME }}.pdf"
 
-      - name: Webhook DC notification
-        if: startsWith(github.ref, 'refs/tags/')
+      - name: Send Discord Notification
+        if: env.IS_TAG == 'true'
         run: |
           curl -s -H "Content-Type: application/json" -d '{"content": "Stworzono dokumentację @everyone"}' ${{ secrets.DISCORD_WEBHOOK_URL }} &> /dev/null
