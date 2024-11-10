@@ -91,7 +91,7 @@ jobs:
         if: startsWith(github.ref, 'refs/tags/')
         run: |
           cp ./docs/latex/refman.pdf ./pl-${{env.FILE_NAME}}.pdf
-          rm -rf ./docs
+
       
       - name: Change Doxyfile language
         run: sed -i 's/OUTPUT_LANGUAGE        = Polish/OUTPUT_LANGUAGE        = English/' Doxyfile
