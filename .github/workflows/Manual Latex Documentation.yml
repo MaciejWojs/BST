@@ -64,9 +64,18 @@ jobs:
               root_file: dokument.tex
               latexmk_shell_escape: true
               extra_system_packages: python3 inkscape
-        
-          - name: Release the compiled program
+
+          - name: Rename generated pdf file
+            if: env.IS_TAG == 'true'
+            run: mv dokument.pdf ${{env.FILE_NAME}}.pdf
+                
+          - name: Compress PDF
+            if: env.IS_TAG == 'true'
+            run: gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.5 -dNOPAUSE -dQUIET -dBATCH -dPrinted=false -sOutputFile="${{env.FILE_NAME}}-compressed.pdf" "${{env.FILE_NAME}}.pdf"
+
+          - name: Release the pdf
+            if: env.IS_TAG == 'true'
             uses: ncipollo/release-action@v1
             with:
-              artifacts: "${{env.OTHER_REPO_PATH}}/${{env.FILE_NAME}}.pdf"
-              allowUpdates: true
+                artifacts: "${{env.FILE_NAME}}.pdf, ${{env.FILE_NAME}}-compressed.pdf"
+                allowUpdates: true
