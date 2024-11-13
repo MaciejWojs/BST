@@ -67,6 +67,7 @@ jobs:
 
           - name: Rename generated pdf file
             if: env.IS_TAG == 'true'
+            working-directory: ${{env.OTHER_REPO_PATH}}
             run: mv dokument.pdf ${{env.FILE_NAME}}.pdf
                 
           - name: Compress PDF
