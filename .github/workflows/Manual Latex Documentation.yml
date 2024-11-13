@@ -65,14 +65,12 @@ jobs:
               latexmk_shell_escape: true
               extra_system_packages: python3 inkscape
 
-          - name: Rename generated pdf file
+          - name: Rename generated pdf file and compress PDF
             if: env.IS_TAG == 'true'
             working-directory: ${{env.OTHER_REPO_PATH}}
-            run: mv dokument.pdf ${{env.FILE_NAME}}.pdf
-                
-          - name: Compress PDF
-            if: env.IS_TAG == 'true'
-            run: gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.5 -dNOPAUSE -dQUIET -dBATCH -dPrinted=false -sOutputFile="${{env.FILE_NAME}}-compressed.pdf" "${{env.FILE_NAME}}.pdf"
+            run: |
+              mv dokument.pdf ${{env.FILE_NAME}}.pdf
+              gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.5 -dNOPAUSE -dQUIET -dBATCH -dPrinted=false -sOutputFile="${{env.FILE_NAME}}-compressed.pdf" "${{env.FILE_NAME}}.pdf"
 
           - name: Release the pdf
             if: env.IS_TAG == 'true'
