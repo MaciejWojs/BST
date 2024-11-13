@@ -45,7 +45,15 @@ jobs:
             uses: ScribeMD/docker-cache@0.5.0
             with:
               key: docker-${{ runner.os }}-${{ hashFiles('Dockerfile') }}
-          
+        
+          - name: check for cache
+            uses: awalsh128/cache-apt-pkgs-action@latest
+            id: cache-packages
+            with:
+              packages: ${{ env.PACKAGES }}
+              version: 1.0
+              execute_install_scripts: true
+
           - name: Checkout other repository
             uses: actions/checkout@v4
             with:
