@@ -79,6 +79,7 @@ jobs:
             run: |
               mv dokument.pdf ${{env.FILE_NAME}}.pdf
               gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.5 -dNOPAUSE -dQUIET -dBATCH -dPrinted=false -sOutputFile="${{env.FILE_NAME}}-compressed.pdf" "${{env.FILE_NAME}}.pdf"
+              cp *.pdf ../
 
           - name: Release the pdf
             if: env.IS_TAG == 'true'
