@@ -1,0 +1,70 @@
+name: Manual Latex Documentation
+on:
+    push:
+        branches:
+            - main
+        tags:
+            - 'v*.*.*'
+
+env:
+    FILE_NAME: Latex-Documentation
+    REPO: ${{ secrets.OWNER }}/${{ secrets.REPO }}
+    PACKAGES: graphviz ghostscript inkscape python3
+    IS_TAG: ${{ startsWith(github.ref, 'refs/tags/') }}
+    OTHER_REPO_PATH: ./docs
+
+jobs:
+    create_cache:
+        runs-on: ubuntu-latest
+        if: ${{ !startsWith(github.ref, 'refs/tags/') }}
+        steps:
+            - name: Cache Docker images
+              id: docker_cache
+              uses: ScribeMD/docker-cache@0.5.0
+              with:
+                key: docker-${{ runner.os }}-${{ hashFiles('Dockerfile') }}
+    
+            - name: Pull TeX Live Docker image if not cached
+              if: steps.docker_cache.outputs.cache-hit != 'true'
+              run: docker pull ghcr.io/xu-cheng/texlive-full:latest
+            
+            - name: check for cache
+              uses: awalsh128/cache-apt-pkgs-action@latest
+              id: cache-packages
+              with:
+                packages: ${{ env.PACKAGES }}
+                version: 1.0
+                execute_install_scripts: true
+    
+    build_pdf:
+        if: ${{ startsWith(github.ref, 'refs/tags/') }}
+        runs-on: ubuntu-latest
+        steps:
+          - name: Cache Docker images
+            id: docker_cache
+            uses: ScribeMD/docker-cache@0.5.0
+            with:
+              key: docker-${{ runner.os }}-${{ hashFiles('Dockerfile') }}
+          
+          - name: Checkout other repository
+            uses: actions/checkout@v4
+            with:
+              repository: ${{ env.REPO }}
+              path: ${{ env.OTHER_REPO_PATH }}
+              token: ${{ secrets.PAT }}
+          
+          - name: Display contents of OTHER_REPO_PATH
+            run: ls -la ${{ env.OTHER_REPO_PATH }}
+
+          - name: Compile LaTeX document
+            if: env.IS_TAG == 'true'
+            uses: xu-cheng/latex-action@3.2.0
+            with:
+              root_file: ./docs/dokument.tex
+              extra_system_packages: python3 inkscape
+        
+          - name: Release the compiled program
+            uses: ncipollo/release-action@v1
+            with:
+              artifacts: "${{env.OTHER_REPO_PATH}}/${{env.FILE_NAME}}.pdf"
+              allowUpdates: true
