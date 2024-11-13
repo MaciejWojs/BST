@@ -60,7 +60,9 @@ jobs:
             if: env.IS_TAG == 'true'
             uses: xu-cheng/latex-action@3.2.0
             with:
-              root_file: ./docs/dokument.tex
+              working_directory: ${{env.OTHER_REPO_PATH}} 
+              root_file: dokument.tex
+              latexmk_shell_escape: true
               extra_system_packages: python3 inkscape
         
           - name: Release the compiled program
