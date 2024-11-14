@@ -18,6 +18,8 @@
 #ifndef BST_HPP
 #define BST_HPP
 
+#include <iostream>
+
  /**
   * \~english
   * @enum display_mode
@@ -89,6 +91,27 @@ struct Node {
      * @brief Destruktor dla węzła.
      */
     ~Node();
+
+    /**
+     * \~english
+     * @brief Overloaded stream insertion operator for Node.
+     *
+     * This operator allows the Node object to be output to an output stream.
+     *
+     * @param output_stream The output stream to write to.
+     * @param node The Node object to output.
+     * @return std::ostream& The output stream after writing the Node.
+     *
+     * \~polish
+     * @brief Przeciążony operator wstawiania strumienia dla węzła.
+     *
+     * Ten operator pozwala na wypisanie obiektu Node do strumienia wyjściowego.
+     *
+     * @param output_stream Strumień wyjściowy do zapisu.
+     * @param node Obiekt Node do wypisania.
+     * @return std::ostream& Strumień wyjściowy po zapisie obiektu Node.
+     */
+    friend std::ostream& operator<<(std::ostream& stream, const Node* node);
 
     /**
      * \~english

@@ -7,6 +7,11 @@ Node::Node(int _value) : value(_value), right(nullptr), left(nullptr), parent(nu
 
 Node::~Node() {}
 
+std::ostream& operator<<(std::ostream& output_stream, const Node* node) {
+    output_stream << node->value;
+    return output_stream;
+}
+
 void Node::set_value(int a) {
     value = a;
 }
