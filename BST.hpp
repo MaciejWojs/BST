@@ -98,7 +98,7 @@ struct Node {
      *
      * This operator allows the Node object to be output to an output stream.
      *
-     * @param output_stream The output stream to write to.
+     * @param stream The output stream to write to.
      * @param node The Node object to output.
      * @return std::ostream& The output stream after writing the Node.
      *
@@ -107,7 +107,7 @@ struct Node {
      *
      * Ten operator pozwala na wypisanie obiektu Node do strumienia wyjściowego.
      *
-     * @param output_stream Strumień wyjściowy do zapisu.
+     * @param stream Strumień wyjściowy do zapisu.
      * @param node Obiekt Node do wypisania.
      * @return std::ostream& Strumień wyjściowy po zapisie obiektu Node.
      */
@@ -174,6 +174,19 @@ class BST {
      * @param node Wskaźnik na korzeń poddrzewa do usunięcia.
      */
     void purge_helper(Node* node);
+
+    /**
+     * \~english
+     * @brief Helper function for in-order traversal and display.
+     *
+     * @param node Pointer to the current node being processed.
+     *
+     * \~polish
+     * @brief Funkcja pomocnicza dla przeglądania i wyświetlania w porządku in-order.
+     *
+     * @param node Wskaźnik na aktualnie przetwarzany węzeł.
+     */
+    void display_inorder(Node* node);
 
     public:
     /**

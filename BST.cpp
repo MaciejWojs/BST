@@ -1,6 +1,5 @@
 #include "BST.hpp"
 #include <iostream>
-#include <stack>
 
 Node::Node() : Node({}) {}
 
@@ -49,11 +48,26 @@ void BST::add_node(int node_value) {
     add_node_helper(node_value, current_root, temp);
 }
 
+void BST::display_inorder(Node* node) {
+    if (!node) {
+        return;
+    }
+
+    display_inorder(node->left);
+    std::cout << node << " ";
+    display_inorder(node->right);
+}
+
 void BST::display(display_mode mode) {
     switch (mode) {
     case INORDER:
-        /* code */
-        std::cout << INORDER;
+        if (!root) {
+            std::cout << "Empty tree" << std::endl;
+            break;
+        }
+
+        display_inorder(root);
+        std::cout << std::endl;
         break;
     case POSTORDER:
         std::cout << POSTORDER;
