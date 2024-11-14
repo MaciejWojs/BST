@@ -1,5 +1,6 @@
 #include "BST.hpp"
 #include <iostream>
+#include <stack>
 
 Node::Node() : Node({}) {}
 
@@ -26,6 +27,26 @@ BST::BST() : root(nullptr) {}
 BST::~BST() {
 }
 
+void BST::add_node_helper(int node_value, Node* current_root, Node* temp) {
+    if (node_value > current_root->value) {
+        if (!current_root->right) {
+            current_root->right = temp;
+            temp->parent = current_root;
+            return;
+        } else {
+            add_node_helper(node_value, current_root->right, temp);
+            return;
+        }
+    } else {
+        if (!current_root->left) {
+            current_root->left = temp;
+            temp->parent = current_root;
+        } else {
+            add_node_helper(node_value, current_root->left, temp);
+        }
+    }
+}
+
 void BST::add_node(int node_value) {
     Node* temp = new Node(node_value);
     if (!root) {
@@ -34,31 +55,7 @@ void BST::add_node(int node_value) {
     }
 
     Node* current_root = root;
-
-    while (true) {
-        if (node_value > current_root->value) {
-            if (!current_root->right) {
-                current_root->right = temp;
-                temp->parent = current_root;
-                break;
-            } else {
-                current_root = current_root->right;
-                continue;
-            }
-        }
-
-        if (node_value < current_root->value) {
-            if (!current_root->left) {
-
-                current_root->left = temp;
-                temp->parent = current_root;
-                break;
-            } else {
-                current_root = current_root->left;
-                continue;
-            }
-        }
-    }
+    add_node_helper(node_value, current_root, temp);
 }
 
 void BST::display(display_mode mode) {
@@ -75,7 +72,6 @@ void BST::display(display_mode mode) {
         std::cout << PREORDER;
         /* code */
         break;
-
     default:
         break;
     }
@@ -91,11 +87,8 @@ void BST::purge_helper(Node* node) {
         return;
     }
 
-
     purge_helper(node->left);
     purge_helper(node->right);
 
-
     delete node;
 }
-#endif 

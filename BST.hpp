@@ -159,9 +159,64 @@ class BST {
     private:
     Node* root; /**< \~english @brief Pointer to the root node / \~polish @brief Wskaźnik na korzeń drzewa. */
 
+    /**
+     * \~english
+     * @brief Helper function to recursively add a node to the BST.
+     *
+     * @details This function is used internally to traverse the tree and insert
+     * a new node in the correct location according to BST rules.
+     *
+     * @param node_value The value of the new node to add.
+     * @param current_root Pointer to the current root being processed.
+     * @param temp Temporary pointer for node manipulation.
+     *
+     * \~polish
+     * @brief Funkcja pomocnicza do rekurencyjnego dodawania węzła do drzewa BST.
+     *
+     * @details Funkcja ta jest używana wewnętrznie do przeglądania drzewa i wstawiania
+     * nowego węzła w odpowiednim miejscu zgodnie z zasadami BST.
+     *
+     * @param node_value Wartość nowego węzła do dodania.
+     * @param current_root Wskaźnik na aktualnie przetwarzany korzeń.
+     * @param temp Tymczasowy wskaźnik do manipulacji węzłami.
+     */
+    void add_node_helper(int node_value, Node* current_root, Node* temp);
+
+    /**
+     * \~english
+     * @brief Helper function to recursively delete all nodes in the subtree.
+     *
+     * @details This function is used internally to traverse the subtree rooted at the given node
+     * and delete all nodes to free up memory.
+     *
+     * @param node Pointer to the root node of the subtree to be deleted.
+     *
+     * \~polish
+     * @brief Funkcja pomocnicza do rekurencyjnego usuwania wszystkich węzłów w poddrzewie.
+     *
+     * @details Funkcja ta jest używana wewnętrznie do przeglądania poddrzewa zakorzenionego w danym węźle
+     * i usuwania wszystkich węzłów w celu zwolnienia pamięci.
+     *
+     * @param node Wskaźnik na korzeń poddrzewa do usunięcia.
+     */
     void purge_helper(Node* node);
 
     public:
+    /**
+     * \~english
+     * @brief Retrieves the root node of the BST.
+     *
+     * @return Node* Pointer to the root node.
+     *
+     * \~polish
+     * @brief Pobiera korzeń drzewa BST.
+     *
+     * @return Node* Wskaźnik na korzeń drzewa.
+     */
+    Node* get_root() {
+        return root;
+    }
+
     /**
      * \~english
      * @brief Default constructor for BST.
@@ -184,8 +239,12 @@ class BST {
      * \~english
      * @brief Adds a new node to the BST.
      *
+     * @param node_value The value of the new node to add.
+     *
      * \~polish
      * @brief Dodaje nowy węzeł do drzewa BST.
+     *
+     * @param node_value Wartość nowego węzła do dodania.
      */
     void add_node(int node_value);
 
