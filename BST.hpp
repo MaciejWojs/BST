@@ -112,32 +112,6 @@ struct Node {
      * @return std::ostream& Strumień wyjściowy po zapisie obiektu Node.
      */
     friend std::ostream& operator<<(std::ostream& stream, const Node* node);
-
-    /**
-     * \~english
-     * @brief Sets the node's value.
-     *
-     * @param a Value to assign.
-     *
-     * \~polish
-     * @brief Ustawia wartość węzła.
-     *
-     * @param a Wartość do przypisania.
-     */
-    void set_value(int a);
-
-    /**
-     * \~english
-     * @brief Retrieves the node's value.
-     *
-     * @return int The value of the node.
-     *
-     * \~polish
-     * @brief Zwraca wartość węzła.
-     *
-     * @return int Wartość węzła.
-     */
-    int get_value();
 };
 
 /**

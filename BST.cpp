@@ -13,15 +13,6 @@ std::ostream& operator<<(std::ostream& output_stream, const Node* node) {
     return output_stream;
 }
 
-void Node::set_value(int a) {
-    value = a;
-}
-
-int Node::get_value() {
-    return value;
-}
-
-
 BST::BST() : root(nullptr) {}
 
 BST::~BST() {
