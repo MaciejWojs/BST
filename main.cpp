@@ -2,10 +2,15 @@
 #include "BST.hpp"
 
 int main() {
-    std::cout << "HelloWorld\n";
     // Branch beta
     Node n;
     BST bst;
+
+    bst.add_node(10);
+    bst.add_node(1000);
+    bst.add_node(5);
+    bst.add_node(1);
+    bst.add_node(13);
 
     bst.display(POSTORDER);
     bst.display(PREORDER);

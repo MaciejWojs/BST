@@ -7,6 +7,11 @@ Node::Node(int _value) : value(_value), right(nullptr), left(nullptr), parent(nu
 
 Node::~Node() {}
 
+std::ostream& operator<<(std::ostream& output_stream, const Node* node) {
+    output_stream << node->value;
+    return output_stream;
+}
+
 void Node::set_value(int a) {
     value = a;
 }
@@ -20,7 +25,42 @@ BST::BST() : root(nullptr) {}
 
 BST::~BST() {
 }
-#ifndef DEBUG
+
+void BST::add_node(int node_value) {
+    Node* temp = new Node(node_value);
+    if (!root) {
+        root = temp;
+        return;
+    }
+
+    Node* current_root = root;
+
+    while (true) {
+        if (node_value > current_root->value) {
+            if (!current_root->right) {
+                current_root->right = temp;
+                temp->parent = current_root;
+                break;
+            } else {
+                current_root = current_root->right;
+                continue;
+            }
+        }
+
+        if (node_value < current_root->value) {
+            if (!current_root->left) {
+
+                current_root->left = temp;
+                temp->parent = current_root;
+                break;
+            } else {
+                current_root = current_root->left;
+                continue;
+            }
+        }
+    }
+}
+
 void BST::display(display_mode mode) {
     switch (mode) {
     case INORDER:
