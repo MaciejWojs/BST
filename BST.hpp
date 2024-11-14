@@ -136,6 +136,8 @@ class BST {
     private:
     Node* root; /**< \~english @brief Pointer to the root node / \~polish @brief Wskaźnik na korzeń drzewa. */
 
+    void purge_helper(Node* node);
+
     public:
     /**
      * \~english
@@ -175,15 +177,6 @@ class BST {
 
     /**
      * \~english
-     * @brief Purges all nodes from the BST.
-     *
-     * \~polish
-     * @brief Usuwa wszystkie węzły z drzewa BST.
-     */
-    void purge();
-
-    /**
-     * \~english
      * @brief Displays the BST in a specified order.
      *
      * @param mode The display mode to use (INORDER, PREORDER, POSTORDER).
@@ -194,6 +187,15 @@ class BST {
      * @param mode Tryb wyświetlania (INORDER, PREORDER, POSTORDER).
      */
     void display(display_mode mode);
+
+    /**
+     * \~english
+     * @brief Purges all nodes from the BST.
+     *
+     * \~polish
+     * @brief Usuwa wszystkie węzły z drzewa BST.
+     */
+    void purge();
 
     /**
      * \~english

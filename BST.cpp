@@ -20,7 +20,7 @@ BST::BST() : root(nullptr) {}
 
 BST::~BST() {
 }
-
+#ifndef DEBUG
 void BST::display(display_mode mode) {
     switch (mode) {
     case INORDER:
@@ -41,3 +41,21 @@ void BST::display(display_mode mode) {
     }
 
 }
+void BST::purge() {
+    purge_helper(root);
+    root = nullptr;
+}
+
+void BST::purge_helper(Node* node) {
+    if (node == nullptr) {
+        return;
+    }
+
+
+    purge_helper(node->left);
+    purge_helper(node->right);
+
+
+    delete node;
+}
+#endif 
