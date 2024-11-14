@@ -60,22 +60,39 @@ void BST::add_node(int node_value) {
         }
     }
 }
+void BST::display_postorder(Node* node) {
+    if (!node) {
+        return;
+    }
+
+    display_postorder(node->left);
+    display_postorder(node->right);
+    std::cout << node << " ";
+}
 
 void BST::display(display_mode mode) {
     switch (mode) {
     case INORDER:
-        /* code */
-        std::cout << INORDER;
+
         break;
     case POSTORDER:
-        std::cout << POSTORDER;
-        /* code */
+        std::cout << "POSTORDER: ";
+        if (!root) {
+            std::cout << "Empty tree" << std::endl;
+            break;
+        }
+        display_postorder(root);
+        std::cout << std::endl;
         break;
     case PREORDER:
-        std::cout << PREORDER;
-        /* code */
+        std::cout << "PREORDER: ";
+        if (!root) {
+            std::cout << "Empty tree" << std::endl;
+            break;
+        }
+        display_preorder(root);
+        std::cout << std::endl;
         break;
-
     default:
         break;
     }
@@ -98,4 +115,4 @@ void BST::purge_helper(Node* node) {
 
     delete node;
 }
-#endif 
+//#endif 

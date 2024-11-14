@@ -211,6 +211,9 @@ class BST {
      */
     void display(display_mode mode);
 
+    void display_preorder(Node* node);
+
+    void display_postorder(Node* node);
     /**
      * \~english
      * @brief Purges all nodes from the BST.
