@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['_7ebst_0',['~BST',['../classBST.html#aff9c7948fbba37844d2893b920ddc238',1,'BST']]],
-  ['_7enode_1',['~Node',['../structNode.html#aa0840c3cb5c7159be6d992adecd2097c',1,'Node']]]
+  ['save_0',['save',['../classBST.html#adc7b5abe38090a2d813c1dce3a5a1979',1,'BST']]],
+  ['set_5fvalue_1',['set_value',['../structNode.html#a6efd99c5bc23fc39a5e58d12a91eba70',1,'Node']]]
 ];

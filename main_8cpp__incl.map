@@ -1,7 +1,8 @@
 <map id="main.cpp" name="main.cpp">
-<area shape="rect" id="Node000001" title=" " alt="" coords="52,5,126,31"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="5,79,77,105"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="83,33,60,67,55,64,79,30"/>
-<area shape="rect" id="Node000003" href="$BST_8hpp.html" title="Plik nagłówkowy implementacji drzewa BST." alt="" coords="101,79,173,105"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="99,30,123,64,118,67,95,33"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,79,31"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="6,153,78,178"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="42,32,34,79,34,109,38,137,33,138,29,109,29,79,37,31"/>
+<area shape="rect" id="Node000003" href="$BST_8hpp.html" title="Plik nagłówkowy implementacji drzewa BST." alt="" coords="44,79,115,105"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="51,30,68,64,64,66,46,32"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="76,106,58,140,53,138,71,104"/>
 </map>

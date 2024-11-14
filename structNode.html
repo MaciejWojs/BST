@@ -102,6 +102,7 @@ $(function(){initNavTree('structNode.html',''); initResizable(true); });
   <div class="summary">
 <a href="#pub-methods">Metody publiczne</a> &#124;
 <a href="#pub-attribs">Atrybuty publiczne</a> &#124;
+<a href="#friends">Przyjaciele</a> &#124;
 <a href="structNode-members.html">Lista wszystkich składowych</a>  </div>
   <div class="headertitle"><div class="title">Dokumentacja struktury Node</div></div>
 </div><!--header-->
@@ -153,6 +154,12 @@ Atrybuty publiczne</h2></td></tr>
 <tr class="memitem:ad8184598cdea70e4bbdfd76f2b0f9e85" id="r_ad8184598cdea70e4bbdfd76f2b0f9e85"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structNode.html">Node</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad8184598cdea70e4bbdfd76f2b0f9e85">parent</a></td></tr>
 <tr class="memdesc:ad8184598cdea70e4bbdfd76f2b0f9e85"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wskaźnik na rodzica.  <br /></td></tr>
 <tr class="separator:ad8184598cdea70e4bbdfd76f2b0f9e85"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="friends" name="friends"></a>
+Przyjaciele</h2></td></tr>
+<tr class="memitem:a7ffd191c0a19e851f95c188ed4ad270c" id="r_a7ffd191c0a19e851f95c188ed4ad270c"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7ffd191c0a19e851f95c188ed4ad270c">operator&lt;&lt;</a> (std::ostream &amp;stream, const <a class="el" href="structNode.html">Node</a> *node)</td></tr>
+<tr class="memdesc:a7ffd191c0a19e851f95c188ed4ad270c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Przeciążony operator wstawiania strumienia dla węzła.  <br /></td></tr>
+<tr class="separator:a7ffd191c0a19e851f95c188ed4ad270c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Opis szczegółowy</h2>
 <div class="textblock"><p>Reprezentuje pojedynczy węzeł w drzewie <a class="el" href="classBST.html" title="Klasa reprezentująca drzewo BST.">BST</a>. </p>
@@ -264,6 +271,47 @@ Atrybuty publiczne</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<h2 class="groupheader">Dokumentacja przyjaciół i powiązanych symboli</h2>
+<a id="a7ffd191c0a19e851f95c188ed4ad270c" name="a7ffd191c0a19e851f95c188ed4ad270c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ffd191c0a19e851f95c188ed4ad270c">&#9670;&#160;</a></span>operator&lt;&lt;</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::ostream &amp; operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;</td>          <td class="paramname"><span class="paramname"><em>stream</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structNode.html">Node</a> *</td>          <td class="paramname"><span class="paramname"><em>node</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Przeciążony operator wstawiania strumienia dla węzła. </p>
+<p>Ten operator pozwala na wypisanie obiektu <a class="el" href="structNode.html" title="Reprezentuje pojedynczy węzeł w drzewie BST.">Node</a> do strumienia wyjściowego.</p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">output_stream</td><td>Strumień wyjściowy do zapisu. </td></tr>
+    <tr><td class="paramname">node</td><td>Obiekt <a class="el" href="structNode.html" title="Reprezentuje pojedynczy węzeł w drzewie BST.">Node</a> do wypisania. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Zwraca</dt><dd>std::ostream&amp; Strumień wyjściowy po zapisie obiektu <a class="el" href="structNode.html" title="Reprezentuje pojedynczy węzeł w drzewie BST.">Node</a>. </dd></dl>
 
 </div>
 </div>
