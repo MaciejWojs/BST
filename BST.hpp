@@ -162,7 +162,7 @@ class BST {
      * \~polish
      * @brief Dodaje nowy węzeł do drzewa BST.
      */
-    void add_node();
+    void add_node(int node_value);
 
     /**
      * \~english
