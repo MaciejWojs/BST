@@ -1,3 +1,20 @@
+/**
+ * \~english
+ * @file BST.cpp
+ * @brief Binary Search Tree (BST) implementation file.
+ *
+ * @details This file contains the implementation of the binary search tree (BST)
+ * class and its node structure, as well as functions for managing the tree
+ * and its traversal.
+ *
+ * \~polish
+ * @file BST.cpp
+ * @brief Plik implementacji drzewa BST.
+ *
+ * @details Zawiera implementację klasy drzewa wyszukiwania binarnego (BST)
+ * oraz jego struktury węzłów i funkcji do zarządzania drzewem oraz jego przeglądaniem.
+ */
+
 #include "BST.hpp"
 #include <iostream>
 #include <string>

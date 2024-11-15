@@ -189,7 +189,31 @@ class BST {
      */
     void display_inorder(Node* node);
 
-    void display_helper(Node* node);
+    /**
+     * \~english
+     * @brief Helper function for pre-order traversal and display.
+     *
+     * @param node Pointer to the current node being processed.
+     *
+     * \~polish
+     * @brief Funkcja pomocnicza dla przeglądania i wyświetlania w porządku pre-order.
+     *
+     * @param node Wskaźnik na aktualnie przetwarzany węzeł.
+     */
+    void display_preorder(Node* node);
+
+    /**
+     * \~english
+     * @brief Helper function for post-order traversal and display.
+     *
+     * @param node Pointer to the current node being processed.
+     *
+     * \~polish
+     * @brief Funkcja pomocnicza dla przeglądania i wyświetlania w porządku post-order.
+     *
+     * @param node Wskaźnik na aktualnie przetwarzany węzeł.
+     */
+    void display_postorder(Node* node);
 
     public:
     /**
@@ -304,7 +328,25 @@ class BST {
      */
     void save();
 
+    /**
+     * \~english
+     * @brief Loads the BST from a text file.
+     *
+     * @details This function reads node values from a text file and inserts them into the tree.
+     * The file should contain one integer value per line.
+     *
+     * @param path The path to the text file containing node values.
+     *
+     * \~polish
+     * @brief Ładuje drzewo BST z pliku tekstowego.
+     *
+     * @details Funkcja odczytuje wartości węzłów z pliku tekstowego i wstawia je do drzewa.
+     * Plik powinien zawierać jedną wartość liczbową na linię.
+     *
+     * @param path Ścieżka do pliku tekstowego zawierającego wartości węzłów.
+     */
     void load_from_text_file(std::string path);
+
 };
 
 #endif /* BST_HPP */
