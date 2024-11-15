@@ -138,7 +138,7 @@ void BST::purge_helper(Node* node) {
 }
 
 void BST::load_from_text_file(std::string path) {
-    std::ifstream file(path.c_str(), std::ios::in);
+    std::ifstream file(path, std::ios::in);
 
     if (file) {
         std::cout << "Plik " << path << " istnieje!" << std::endl;

@@ -286,32 +286,6 @@ class BST {
 
     /**
      * \~english
-     * @brief Helper function for pre-order traversal and display.
-     *
-     * @param node Pointer to the current node being processed.
-     *
-     * \~polish
-     * @brief Funkcja pomocnicza dla przeglądania i wyświetlania w porządku pre-order.
-     *
-     * @param node Wskaźnik na aktualnie przetwarzany węzeł.
-     */
-    void display_preorder(Node* node);
-
-    /**
-     * \~english
-     * @brief Helper function for post-order traversal and display.
-     *
-     * @param node Pointer to the current node being processed.
-     *
-     * \~polish
-     * @brief Funkcja pomocnicza dla przeglądania i wyświetlania w porządku post-order.
-     *
-     * @param node Wskaźnik na aktualnie przetwarzany węzeł.
-     */
-    void display_postorder(Node* node);
-
-    /**
-     * \~english
      * @brief Purges all nodes from the BST.
      *
      * \~polish
