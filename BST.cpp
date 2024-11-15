@@ -79,6 +79,7 @@ void BST::display_preorder(Node* node) {
 void BST::display(display_mode mode) {
     switch (mode) {
     case INORDER:
+        std::cout << "INORDER: ";
         if (!root) {
             std::cout << "Empty tree" << std::endl;
             break;
