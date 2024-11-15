@@ -131,9 +131,9 @@ Metody publiczne</h2></td></tr>
 <tr class="memitem:abacd7ba4914718e5db56257a57616554" id="r_abacd7ba4914718e5db56257a57616554"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abacd7ba4914718e5db56257a57616554">display</a> (<a class="el" href="BST_8hpp.html#a538b580ce6370e754b5e9bfdff772eab">display_mode</a> mode)</td></tr>
 <tr class="memdesc:abacd7ba4914718e5db56257a57616554"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wyświetla drzewo <a class="el" href="classBST.html" title="Klasa reprezentująca drzewo BST.">BST</a> w określonej kolejności.  <br /></td></tr>
 <tr class="separator:abacd7ba4914718e5db56257a57616554"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae527ac1b2d63b60ff1224dacbc494dee" id="r_ae527ac1b2d63b60ff1224dacbc494dee"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae527ac1b2d63b60ff1224dacbc494dee">display_preorder</a> (<a class="el" href="structNode.html">Node</a> *node)</td></tr>
-<tr class="memdesc:ae527ac1b2d63b60ff1224dacbc494dee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funkcja pomocnicza dla przeglądania i wyświetlania w porządku pre-order.  <br /></td></tr>
-<tr class="separator:ae527ac1b2d63b60ff1224dacbc494dee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e911c68fd7dd941ca7d0c3be364d68c" id="r_a5e911c68fd7dd941ca7d0c3be364d68c"><td class="memItemLeft" align="right" valign="top">&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD void display_preorder(<a class="el" href="structNode.html">Node</a> *node);void display_postorder(<a class="el" href="structNode.html">Node</a> *node);=======&gt; &gt; &gt; &gt; &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5e911c68fd7dd941ca7d0c3be364d68c">dd169a1</a> (Added doxygen comments to missing methods and changed <a class="el" href="#abacd7ba4914718e5db56257a57616554">display</a> traversal methods to private) void display_preorder(<a class="el" href="structNode.html">Node</a> *node)</td></tr>
+<tr class="memdesc:a5e911c68fd7dd941ca7d0c3be364d68c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funkcja pomocnicza dla przeglądania i wyświetlania w porządku pre-order.  <br /></td></tr>
+<tr class="separator:a5e911c68fd7dd941ca7d0c3be364d68c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7491aff095c65f91a9e28b9f970cc2e8" id="r_a7491aff095c65f91a9e28b9f970cc2e8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7491aff095c65f91a9e28b9f970cc2e8">display_postorder</a> (<a class="el" href="structNode.html">Node</a> *node)</td></tr>
 <tr class="memdesc:a7491aff095c65f91a9e28b9f970cc2e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funkcja pomocnicza dla przeglądania i wyświetlania w porządku post-order.  <br /></td></tr>
 <tr class="separator:a7491aff095c65f91a9e28b9f970cc2e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -143,6 +143,9 @@ Metody publiczne</h2></td></tr>
 <tr class="memitem:adc7b5abe38090a2d813c1dce3a5a1979" id="r_adc7b5abe38090a2d813c1dce3a5a1979"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adc7b5abe38090a2d813c1dce3a5a1979">save</a> ()</td></tr>
 <tr class="memdesc:adc7b5abe38090a2d813c1dce3a5a1979"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zapisuje aktualny stan drzewa <a class="el" href="classBST.html" title="Klasa reprezentująca drzewo BST.">BST</a>.  <br /></td></tr>
 <tr class="separator:adc7b5abe38090a2d813c1dce3a5a1979"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a03aee1af164735fb9af0c2c8ea81b518" id="r_a03aee1af164735fb9af0c2c8ea81b518"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a03aee1af164735fb9af0c2c8ea81b518">load_from_text_file</a> (std::string path)</td></tr>
+<tr class="memdesc:a03aee1af164735fb9af0c2c8ea81b518"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ładuje drzewo <a class="el" href="classBST.html" title="Klasa reprezentująca drzewo BST.">BST</a> z pliku tekstowego.  <br /></td></tr>
+<tr class="separator:a03aee1af164735fb9af0c2c8ea81b518"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Opis szczegółowy</h2>
 <div class="textblock"><p>Klasa reprezentująca drzewo <a class="el" href="classBST.html" title="Klasa reprezentująca drzewo BST.">BST</a>. </p>
@@ -206,6 +209,31 @@ Metody publiczne</h2></td></tr>
 <dl class="params"><dt>Parametry</dt><dd>
   <table class="params">
     <tr><td class="paramname">node_value</td><td>Wartość nowego węzła do dodania. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a5e911c68fd7dd941ca7d0c3be364d68c" name="a5e911c68fd7dd941ca7d0c3be364d68c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e911c68fd7dd941ca7d0c3be364d68c">&#9670;&#160;</a></span>dd169a1()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD void display_preorder(<a class="el" href="structNode.html">Node</a> *node); void display_postorder(<a class="el" href="structNode.html">Node</a> *node);=======&gt; &gt; &gt; &gt; &gt; &gt; BST::dd169a1 </td>
+          <td>(</td>
+          <td class="paramtype">Added doxygen comments to missing methods and changed <a class="el" href="#abacd7ba4914718e5db56257a57616554">display</a> traversal methods to</td>          <td class="paramname"><span class="paramname"><em>private</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Funkcja pomocnicza dla przeglądania i wyświetlania w porządku pre-order. </p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">node</td><td>Wskaźnik na aktualnie przetwarzany węzeł. </td></tr>
   </table>
   </dd>
 </dl>
@@ -281,31 +309,6 @@ Metody publiczne</h2></td></tr>
 
 </div>
 </div>
-<a id="ae527ac1b2d63b60ff1224dacbc494dee" name="ae527ac1b2d63b60ff1224dacbc494dee"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae527ac1b2d63b60ff1224dacbc494dee">&#9670;&#160;</a></span>display_preorder()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void BST::display_preorder </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="structNode.html">Node</a> *</td>          <td class="paramname"><span class="paramname"><em>node</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Funkcja pomocnicza dla przeglądania i wyświetlania w porządku pre-order. </p>
-<dl class="params"><dt>Parametry</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">node</td><td>Wskaźnik na aktualnie przetwarzany węzeł. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
 <a id="ab4a657e12fee7a4a0fe17e0182b2492a" name="ab4a657e12fee7a4a0fe17e0182b2492a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab4a657e12fee7a4a0fe17e0182b2492a">&#9670;&#160;</a></span>get_root()</h2>
 
@@ -331,6 +334,32 @@ Metody publiczne</h2></td></tr>
 
 <p>Pobiera korzeń drzewa <a class="el" href="classBST.html" title="Klasa reprezentująca drzewo BST.">BST</a>. </p>
 <dl class="section return"><dt>Zwraca</dt><dd>Node* Wskaźnik na korzeń drzewa. </dd></dl>
+
+</div>
+</div>
+<a id="a03aee1af164735fb9af0c2c8ea81b518" name="a03aee1af164735fb9af0c2c8ea81b518"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a03aee1af164735fb9af0c2c8ea81b518">&#9670;&#160;</a></span>load_from_text_file()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void BST::load_from_text_file </td>
+          <td>(</td>
+          <td class="paramtype">std::string</td>          <td class="paramname"><span class="paramname"><em>path</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ładuje drzewo <a class="el" href="classBST.html" title="Klasa reprezentująca drzewo BST.">BST</a> z pliku tekstowego. </p>
+<p>Funkcja odczytuje wartości węzłów z pliku tekstowego i wstawia je do drzewa. Plik powinien zawierać jedną wartość liczbową na linię.</p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>Ścieżka do pliku tekstowego zawierającego wartości węzłów. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
