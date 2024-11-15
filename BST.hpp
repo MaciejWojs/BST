@@ -19,6 +19,7 @@
 #define BST_HPP
 
 #include <iostream>
+#include <string>
 
  /**
   * \~english
@@ -188,6 +189,8 @@ class BST {
      */
     void display_inorder(Node* node);
 
+    void display_helper(Node* node);
+
     public:
     /**
      * \~english
@@ -300,6 +303,8 @@ class BST {
      * @brief Zapisuje aktualny stan drzewa BST.
      */
     void save();
+
+    void load_from_text_file(std::string path);
 };
 
 #endif /* BST_HPP */

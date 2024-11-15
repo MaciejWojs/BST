@@ -1,5 +1,7 @@
 #include "BST.hpp"
 #include <iostream>
+#include <string>
+#include <fstream>
 
 Node::Node() : Node({}) {}
 
@@ -126,4 +128,19 @@ void BST::purge_helper(Node* node) {
     purge_helper(node->right);
 
     delete node;
+}
+
+void BST::load_from_text_file(std::string path) {
+    std::ifstream file(path.c_str(), std::ios::in);
+
+    if (file) {
+        std::cout << "Plik " << path << " istnieje!" << std::endl;
+    } else {
+        std::cout << "Plik nie istnieje!" << std::endl;
+    }
+
+    int buffer;
+    while (file >> buffer) {
+        add_node(buffer);
+    }
 }
