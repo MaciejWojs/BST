@@ -15,4 +15,7 @@ int main() {
     bst.display(POSTORDER);
     bst.display(PREORDER);
     bst.display(INORDER);
+
+    bst.purge();
+    bst.display(PREORDER);
 }

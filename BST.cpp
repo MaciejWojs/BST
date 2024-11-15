@@ -15,6 +15,7 @@ std::ostream& operator<<(std::ostream& output_stream, const Node* node) {
 BST::BST() : root(nullptr) {}
 
 BST::~BST() {
+    purge();
 }
 
 void BST::add_node_helper(int node_value, Node* current_root, Node* temp) {
