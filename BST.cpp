@@ -70,6 +70,15 @@ void BST::display_postorder(Node* node) {
     std::cout << node << " ";
 }
 
+void BST::display_preorder(Node* node) {
+    if (!node) {
+        return;
+    }
+    std::cout << node << " ";
+    display_preorder(node->left);
+    display_preorder(node->right);
+}
+
 void BST::display(display_mode mode) {
     switch (mode) {
     case INORDER:
