@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['operator_3c_3c_0',['operator&lt;&lt;',['../BST_8cpp.html#a8221a03dc8ee04e750ec98be2ac034c8',1,'BST.cpp']]]
+  ['purge_0',['purge',['../classBST.html#ab57605c2f6cbe553f00885a8e29525c0',1,'BST']]]
 ];

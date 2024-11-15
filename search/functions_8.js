@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['purge_0',['purge',['../classBST.html#ab57605c2f6cbe553f00885a8e29525c0',1,'BST']]]
+  ['save_0',['save',['../classBST.html#adc7b5abe38090a2d813c1dce3a5a1979',1,'BST']]]
 ];
