@@ -80,40 +80,30 @@ void BST::display_preorder(Node* node) {
 }
 
 void BST::display(display_mode mode) {
+    if (!root) {
+        std::cout << "Empty tree" << std::endl;
+        return;
+    }
+
     switch (mode) {
     case INORDER:
-        std::cout << "INORDER: ";
-        if (!root) {
-            std::cout << "Empty tree" << std::endl;
-            break;
-        }
-
+        std::cout << "IN-order: ";
         display_inorder(root);
-        std::cout << std::endl;
         break;
     case POSTORDER:
-        std::cout << "POSTORDER: ";
-        if (!root) {
-            std::cout << "Empty tree" << std::endl;
-            break;
-        }
+        std::cout << "POST-order: ";
         display_postorder(root);
-        std::cout << std::endl;
         break;
     case PREORDER:
-        std::cout << "PREORDER: ";
-        if (!root) {
-            std::cout << "Empty tree" << std::endl;
-            break;
-        }
+        std::cout << "PRE-order: ";
         display_preorder(root);
-        std::cout << std::endl;
         break;
     default:
         break;
     }
-
+    std::cout << std::endl;
 }
+
 void BST::purge() {
     purge_helper(root);
     root = nullptr;
