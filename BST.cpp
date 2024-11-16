@@ -151,3 +151,24 @@ void BST::load_from_text_file(std::string path) {
         add_node(buffer);
     }
 }
+Node* BST::find(int value) {
+    Node* current = root;
+    std::cout << "Sciezka wyszukiwania: ";
+
+    while (current != nullptr) {
+        std::cout << current->value;
+        if (value == current->value) {
+            std::cout << std::endl;
+            return current;
+        } else if (value < current->value) {
+            std::cout << " -> ";
+            current = current->left;
+        } else {
+            std::cout << " -> ";
+            current = current->right;
+        }
+    }
+
+    std::cout << "null" << std::endl;
+    return nullptr;
+}
