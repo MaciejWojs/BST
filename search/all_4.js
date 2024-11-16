@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['inorder_0',['INORDER',['../BST_8hpp.html#a538b580ce6370e754b5e9bfdff772eaba541a7d029edbe0dc4855fa23ba23162b',1,'BST.hpp']]]
+  ['get_5froot_0',['get_root',['../classBST.html#ab4a657e12fee7a4a0fe17e0182b2492a',1,'BST']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['save_0',['save',['../classBST.html#adc7b5abe38090a2d813c1dce3a5a1979',1,'BST']]]
+  ['right_0',['right',['../structNode.html#a7328862eaa6dea28018326549b3294d3',1,'Node']]]
 ];

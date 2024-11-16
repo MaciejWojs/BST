@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['main_0',['main',['../main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main.cpp']]],
-  ['main_2ecpp_1',['main.cpp',['../main_8cpp.html',1,'']]]
+  ['left_0',['left',['../structNode.html#ab8c667ac8fdb120ed4c031682a9cdaee',1,'Node']]],
+  ['load_5ffrom_5ftext_5ffile_1',['load_from_text_file',['../classBST.html#a03aee1af164735fb9af0c2c8ea81b518',1,'BST']]]
 ];
