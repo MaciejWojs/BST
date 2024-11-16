@@ -293,6 +293,21 @@ class BST {
     void purge();
 
     /**
+ * \~english
+ * @brief Finds a node with the specified value in the BST.
+ *
+ * @param value The value to search for.
+ * @return Node* Pointer to the node if found, nullptr otherwise.
+ *
+ * \~polish
+ * @brief Wyszukuje węzeł o podanej wartości w drzewie BST.
+ *
+ * @param value Wartość do wyszukania.
+ * @return Node* Wskaźnik na węzeł, jeśli znaleziono, nullptr w przeciwnym wypadku.
+ */
+    Node* find(int value);
+
+    /**
      * \~english
      * @brief Saves the current state of the BST.
      *
