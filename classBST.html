@@ -143,6 +143,18 @@ Metody publiczne</h2></td></tr>
 <tr class="memitem:a03aee1af164735fb9af0c2c8ea81b518" id="r_a03aee1af164735fb9af0c2c8ea81b518"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a03aee1af164735fb9af0c2c8ea81b518">load_from_text_file</a> (std::string path)</td></tr>
 <tr class="memdesc:a03aee1af164735fb9af0c2c8ea81b518"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ładuje drzewo <a class="el" href="classBST.html" title="Klasa reprezentująca drzewo BST.">BST</a> z pliku tekstowego.  <br /></td></tr>
 <tr class="separator:a03aee1af164735fb9af0c2c8ea81b518"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a38911fe83ef6e0ee81e9dd4c508d8c72" id="r_a38911fe83ef6e0ee81e9dd4c508d8c72"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a38911fe83ef6e0ee81e9dd4c508d8c72">get_depth</a> ()</td></tr>
+<tr class="memdesc:a38911fe83ef6e0ee81e9dd4c508d8c72"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pobiera głębokość (wysokość) drzewa <a class="el" href="classBST.html" title="Klasa reprezentująca drzewo BST.">BST</a>.  <br /></td></tr>
+<tr class="separator:a38911fe83ef6e0ee81e9dd4c508d8c72"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa55cf79549581decec48177272c31c63" id="r_aa55cf79549581decec48177272c31c63"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa55cf79549581decec48177272c31c63">get_biggest</a> ()</td></tr>
+<tr class="memdesc:aa55cf79549581decec48177272c31c63"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pobiera największą wartość w drzewie <a class="el" href="classBST.html" title="Klasa reprezentująca drzewo BST.">BST</a>.  <br /></td></tr>
+<tr class="separator:aa55cf79549581decec48177272c31c63"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaedfae65717e3de45d3afb2268da6dbe" id="r_aaedfae65717e3de45d3afb2268da6dbe"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaedfae65717e3de45d3afb2268da6dbe">get_smallest</a> ()</td></tr>
+<tr class="memdesc:aaedfae65717e3de45d3afb2268da6dbe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pobiera najmniejszą wartość w drzewie <a class="el" href="classBST.html" title="Klasa reprezentująca drzewo BST.">BST</a>.  <br /></td></tr>
+<tr class="separator:aaedfae65717e3de45d3afb2268da6dbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1a1696725c0747b07f23d99c6d01bd8" id="r_af1a1696725c0747b07f23d99c6d01bd8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af1a1696725c0747b07f23d99c6d01bd8">display_tree</a> ()</td></tr>
+<tr class="memdesc:af1a1696725c0747b07f23d99c6d01bd8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wyświetla drzewo <a class="el" href="classBST.html" title="Klasa reprezentująca drzewo BST.">BST</a> w formacie wizualnym, poziom po poziomie.  <br /></td></tr>
+<tr class="separator:af1a1696725c0747b07f23d99c6d01bd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Opis szczegółowy</h2>
 <div class="textblock"><p>Klasa reprezentująca drzewo <a class="el" href="classBST.html" title="Klasa reprezentująca drzewo BST.">BST</a>. </p>
@@ -256,6 +268,41 @@ Metody publiczne</h2></td></tr>
 
 </div>
 </div>
+<a id="af1a1696725c0747b07f23d99c6d01bd8" name="af1a1696725c0747b07f23d99c6d01bd8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af1a1696725c0747b07f23d99c6d01bd8">&#9670;&#160;</a></span>display_tree()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void BST::display_tree </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Wyświetla drzewo <a class="el" href="classBST.html" title="Klasa reprezentująca drzewo BST.">BST</a> w formacie wizualnym, poziom po poziomie. </p>
+<p>Funkcja zapewnia wizualną reprezentację struktury <a class="el" href="classBST.html" title="Klasa reprezentująca drzewo BST.">BST</a> poprzez:</p><ol type="1">
+<li>Sprawdzenie czy drzewo jest puste</li>
+<li>Jeśli nie jest puste, obliczenie głębokości drzewa i wymaganej szerokości wyświetlania</li>
+<li>Utworzenie dwuwymiarowego wektora do przechowywania wizualnej reprezentacji drzewa</li>
+<li>Użycie funkcji pomocniczej do wypełnienia matrycy wizualizacji</li>
+<li>Końcowe wydrukowanie struktury drzewa na konsolę</li>
+</ol>
+<p>Wizualizacja wykorzystuje:</p><ul>
+<li>Obliczenie szerokości: 3 * 2^(głębokość-1) dla zapewnienia odpowiednich odstępów</li>
+<li>Dwuwymiarowy wektor, gdzie każdy wiersz reprezentuje poziom drzewa</li>
+<li>Każda komórka w wektorze zawiera wartość węzła lub pustą przestrzeń</li>
+</ul>
+<dl class="section note"><dt>Nota</dt><dd>Funkcja obsługuje puste drzewa wyświetlając "Empty tree" </dd>
+<dd>
+Szerokość jest obliczana tak, aby zapewnić odpowiednie odstępy między węzłami</dd></dl>
+<p>Złożoność czasowa: O(n) gdzie n to liczba węzłów Złożoność przestrzenna: O(2^h) gdzie h to wysokość drzewa </p>
+
+</div>
+</div>
 <a id="aa507fc9358d1dd2bef9f684b79e0fd26" name="aa507fc9358d1dd2bef9f684b79e0fd26"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa507fc9358d1dd2bef9f684b79e0fd26">&#9670;&#160;</a></span>find()</h2>
 
@@ -279,6 +326,47 @@ Metody publiczne</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Zwraca</dt><dd>Node* Wskaźnik na węzeł, jeśli znaleziono, nullptr w przeciwnym wypadku. </dd></dl>
+
+</div>
+</div>
+<a id="aa55cf79549581decec48177272c31c63" name="aa55cf79549581decec48177272c31c63"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa55cf79549581decec48177272c31c63">&#9670;&#160;</a></span>get_biggest()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int BST::get_biggest </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Pobiera największą wartość w drzewie <a class="el" href="classBST.html" title="Klasa reprezentująca drzewo BST.">BST</a>. </p>
+<dl class="section return"><dt>Zwraca</dt><dd>int Największa wartość przechowywana w drzewie <a class="el" href="classBST.html" title="Klasa reprezentująca drzewo BST.">BST</a>. </dd></dl>
+
+</div>
+</div>
+<a id="a38911fe83ef6e0ee81e9dd4c508d8c72" name="a38911fe83ef6e0ee81e9dd4c508d8c72"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a38911fe83ef6e0ee81e9dd4c508d8c72">&#9670;&#160;</a></span>get_depth()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int BST::get_depth </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Pobiera głębokość (wysokość) drzewa <a class="el" href="classBST.html" title="Klasa reprezentująca drzewo BST.">BST</a>. </p>
+<p>Głębokość jest definiowana jako liczba krawędzi na najdłuższej ścieżce od korzenia do liścia. Puste drzewo ma głębokość 0.</p>
+<dl class="section return"><dt>Zwraca</dt><dd>int Głębokość drzewa <a class="el" href="classBST.html" title="Klasa reprezentująca drzewo BST.">BST</a>. </dd></dl>
 
 </div>
 </div>
@@ -310,6 +398,26 @@ Metody publiczne</h2></td></tr>
 
 </div>
 </div>
+<a id="aaedfae65717e3de45d3afb2268da6dbe" name="aaedfae65717e3de45d3afb2268da6dbe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaedfae65717e3de45d3afb2268da6dbe">&#9670;&#160;</a></span>get_smallest()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int BST::get_smallest </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Pobiera najmniejszą wartość w drzewie <a class="el" href="classBST.html" title="Klasa reprezentująca drzewo BST.">BST</a>. </p>
+<dl class="section return"><dt>Zwraca</dt><dd>int Najmniejsza wartość przechowywana w drzewie <a class="el" href="classBST.html" title="Klasa reprezentująca drzewo BST.">BST</a>. </dd></dl>
+
+</div>
+</div>
 <a id="a03aee1af164735fb9af0c2c8ea81b518" name="a03aee1af164735fb9af0c2c8ea81b518"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a03aee1af164735fb9af0c2c8ea81b518">&#9670;&#160;</a></span>load_from_text_file()</h2>
 
@@ -326,7 +434,7 @@ Metody publiczne</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Ładuje drzewo <a class="el" href="classBST.html" title="Klasa reprezentująca drzewo BST.">BST</a> z pliku tekstowego. </p>
-<p>Funkcja odczytuje wartości węzłów z pliku tekstowego i wstawia je do drzewa. Plik powinien zawierać jedną wartość liczbową na linię.</p>
+<p>Funkcja odczytuje wartości węzłów z pliku tekstowego i wstawia je do drzewa. </p><dl class="section note"><dt>Nota</dt><dd>Plik powinien zawierać jedną wartość liczbową na linię.</dd></dl>
 <dl class="params"><dt>Parametry</dt><dd>
   <table class="params">
     <tr><td class="paramname">path</td><td>Ścieżka do pliku tekstowego zawierającego wartości węzłów. </td></tr>

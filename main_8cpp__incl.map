@@ -1,11 +1,13 @@
 <map id="main.cpp" name="main.cpp">
-<area shape="rect" id="Node000001" title=" " alt="" coords="48,5,122,31"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="92,5,166,31"/>
 <area shape="rect" id="Node000002" title=" " alt="" coords="5,153,77,178"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="73,33,54,54,40,80,35,109,37,137,32,138,30,109,34,78,50,51,69,30"/>
-<area shape="rect" id="Node000003" href="$BST_8hpp.html" title="Plik nagłówkowy implementacji drzewa BST." alt="" coords="49,79,121,105"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="88,31,88,63,82,63,82,31"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="116,153,169,178"/>
-<area shape="poly" id="edge5_Node000001_Node000004" title=" " alt="" coords="100,30,119,51,135,78,143,108,146,137,141,137,138,109,131,80,115,54,96,33"/>
-<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="80,106,59,141,54,138,75,103"/>
-<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="97,103,125,139,121,142,92,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="120,33,83,80,54,139,49,137,79,78,116,30"/>
+<area shape="rect" id="Node000003" href="$BST_8hpp.html" title="Plik nagłówkowy implementacji drzewa BST." alt="" coords="93,79,165,105"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="132,31,132,63,126,63,126,31"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="182,153,236,178"/>
+<area shape="poly" id="edge6_Node000001_Node000004" title=" " alt="" coords="143,30,161,51,179,78,204,136,199,138,175,80,157,54,139,33"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="116,107,69,145,66,141,112,103"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="144,103,186,140,183,144,141,107"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="100,153,158,178"/>
+<area shape="poly" id="edge5_Node000003_Node000005" title=" " alt="" coords="132,105,132,137,126,137,126,105"/>
 </map>
