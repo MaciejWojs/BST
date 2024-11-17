@@ -20,6 +20,7 @@
 
 #include <iostream>
 #include <string>
+#include <vector>
 
  /**
   * \~english
@@ -215,6 +216,45 @@ class BST {
      */
     void display_postorder(Node* node);
 
+    int get_depth_helper(Node* node);
+
+    /**
+     * \~english
+     * @brief Helper method to find the biggest value in the subtree.
+     *
+     * @param node Pointer to the root of subtree.
+     * @return int Biggest value in the subtree.
+     *
+     * \~polish
+     * @brief Metoda pomocnicza do znalezienia największej wartości w poddrzewie.
+     *
+     * @param node Wskaźnik na korzeń poddrzewa.
+     * @return int Największa wartość w poddrzewie.
+     */
+    int get_biggest_helper(Node* node);
+    int get_smallest_helper(Node* node);
+    /**
+     * \~english
+     * @brief Helper function for displaying binary search tree in a graphical way
+     * @details The function recursively traverses through the tree and fills vector of vectors with nodes' values
+     * to represent the tree structure
+     * @param node Current node being processed
+     * @param depth Current depth level in the tree
+     * @param left Left boundary of current node's position
+     * @param right Right boundary of current node's position
+     * @param levels Reference to vector of vectors storing nodes' values at each level
+     *
+     * \~polish
+     * @brief Funkcja pomocnicza do graficznego wyświetlania drzewa BST
+     * @details Funkcja rekurencyjnie przechodzi przez drzewo i wypełnia wektor wektorów wartościami węzłów,
+     * aby reprezentować strukturę drzewa
+     * @param node Aktualnie przetwarzany węzeł
+     * @param depth Aktualny poziom głębokości w drzewie
+     * @param left Lewa granica pozycji aktualnego węzła
+     * @param right Prawa granica pozycji aktualnego węzła
+     * @param levels Referencja do wektora wektorów przechowującego wartości węzłów na każdym poziomie
+     */
+    void display_tree_helper(Node* node, int depth, int left, int right, std::vector<std::vector<std::string>>& levels);
     public:
     /**
      * \~english
@@ -322,7 +362,7 @@ class BST {
      * @brief Loads the BST from a text file.
      *
      * @details This function reads node values from a text file and inserts them into the tree.
-     * The file should contain one integer value per line.
+     * @note The file should contain one integer value per line.
      *
      * @param path The path to the text file containing node values.
      *
@@ -330,11 +370,58 @@ class BST {
      * @brief Ładuje drzewo BST z pliku tekstowego.
      *
      * @details Funkcja odczytuje wartości węzłów z pliku tekstowego i wstawia je do drzewa.
-     * Plik powinien zawierać jedną wartość liczbową na linię.
+     * @note Plik powinien zawierać jedną wartość liczbową na linię.
      *
      * @param path Ścieżka do pliku tekstowego zawierającego wartości węzłów.
      */
     void load_from_text_file(std::string path);
+
+    /**
+   * \~english
+   * @brief Retrieves the depth (height) of the BST.
+   *
+   * @details The depth is defined as the number of edges in the longest path
+   * from the root node to a leaf node. An empty tree has a depth of 0.
+   *
+   * @return int The depth of the BST.
+   *
+   * \~polish
+   * @brief Pobiera głębokość (wysokość) drzewa BST.
+   *
+   * @details Głębokość jest definiowana jako liczba krawędzi na najdłuższej ścieżce
+   * od korzenia do liścia. Puste drzewo ma głębokość 0.
+   *
+   * @return int Głębokość drzewa BST.
+   */
+    int get_depth();
+
+    /**
+     * \~english
+     * @brief Retrieves the largest value in the BST.
+     *
+     * @return int The largest value stored in the BST.
+     *
+     * \~polish
+     * @brief Pobiera największą wartość w drzewie BST.
+     *
+     * @return int Największa wartość przechowywana w drzewie BST.
+     */
+    int get_biggest();
+
+    /**
+     * \~english
+     * @brief Retrieves the smallest value in the BST.
+     *
+     * @return int The smallest value stored in the BST.
+     *
+     * \~polish
+     * @brief Pobiera najmniejszą wartość w drzewie BST.
+     *
+     * @return int Najmniejsza wartość przechowywana w drzewie BST.
+     */
+    int get_smallest();
+
+    void display_tree();
 
 };
 

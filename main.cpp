@@ -18,9 +18,17 @@ int main() {
     // bst.add_node(534);
     // bst.add_node(22);
 
-    bst.display(POSTORDER);
-    bst.display(PREORDER);
-    bst.display(INORDER);
+    bst.display_tree();
+
+    // bst.display(POSTORDER);
+    // bst.display(PREORDER);
+    // bst.display(INORDER);
+
+    // std::cout << bst.get_depth() << '\n';
+    // std::cout << bst.get_biggest() << '\n';
+    // std::cout << bst.get_smallest() << '\n';
+
+    // bst.display_tree();
 
     bst.find(1);
     bst.find(18);
