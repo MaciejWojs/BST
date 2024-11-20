@@ -216,6 +216,25 @@ class BST {
      */
     void display_postorder(Node* node);
 
+    /**
+     * \~english
+     * @brief Helper method to calculate the depth of a subtree.
+     *
+     * @details This recursive function calculates the depth of a subtree by
+     * traversing the tree and finding the longest path from the root to a leaf node.
+     *
+     * @param node Pointer to the root node of the subtree.
+     * @return int The depth of the subtree.
+     *
+     * \~polish
+     * @brief Funkcja pomocnicza do obliczania głębokości poddrzewa.
+     *
+     * @details Ta rekurencyjna funkcja oblicza głębokość poddrzewa, przeszukując drzewo
+     * i znajdując najdłuższą ścieżkę od korzenia do liścia.
+     *
+     * @param node Wskaźnik na korzeń poddrzewa.
+     * @return int Głębokość poddrzewa.
+     */
     int get_depth_helper(Node* node);
 
     /**
