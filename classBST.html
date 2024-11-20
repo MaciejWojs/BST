@@ -101,6 +101,8 @@ $(function(){initNavTree('classBST.html',''); initResizable(true); });
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Metody publiczne</a> &#124;
+<a href="#pri-methods">Metody prywatne</a> &#124;
+<a href="#pri-attribs">Atrybuty prywatne</a> &#124;
 <a href="classBST-members.html">Lista wszystkich składowych</a>  </div>
   <div class="headertitle"><div class="title">Dokumentacja klasy BST</div></div>
 </div><!--header-->
@@ -110,6 +112,17 @@ $(function(){initNavTree('classBST.html',''); initResizable(true); });
  <a href="#details">Więcej...</a></p>
 
 <p><code>#include &lt;<a class="el" href="BST_8hpp_source.html">BST.hpp</a>&gt;</code></p>
+<div class="dynheader">
+Diagram współpracy dla BST:</div>
+<div class="dyncontent">
+<div class="center"><img src="classBST__coll__graph.png" border="0" usemap="#aBST_coll__map" alt="Collaboration graph"/></div>
+<map name="aBST_coll__map" id="aBST_coll__map">
+<area shape="rect" title="Klasa reprezentująca drzewo BST." alt="" coords="8,113,55,139"/>
+<area shape="rect" href="structNode.html" title="Reprezentuje pojedynczy węzeł w drzewie BST." alt="" coords="5,15,58,41"/>
+<area shape="poly" title=" " alt="" coords="34,57,34,113,29,113,29,57"/>
+<area shape="poly" title=" " alt="" coords="74,17,81,20,84,28,76,39,58,40,58,35,73,34,79,27,77,24,72,21"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legenda</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Metody publiczne</h2></td></tr>
@@ -155,6 +168,44 @@ Metody publiczne</h2></td></tr>
 <tr class="memitem:af1a1696725c0747b07f23d99c6d01bd8" id="r_af1a1696725c0747b07f23d99c6d01bd8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af1a1696725c0747b07f23d99c6d01bd8">display_tree</a> ()</td></tr>
 <tr class="memdesc:af1a1696725c0747b07f23d99c6d01bd8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wyświetla drzewo <a class="el" href="classBST.html" title="Klasa reprezentująca drzewo BST.">BST</a> w formacie graficznym.  <br /></td></tr>
 <tr class="separator:af1a1696725c0747b07f23d99c6d01bd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Metody prywatne</h2></td></tr>
+<tr class="memitem:afcdf947c0dbc2860c7b9786d96955601" id="r_afcdf947c0dbc2860c7b9786d96955601"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afcdf947c0dbc2860c7b9786d96955601">add_node_helper</a> (int node_value, <a class="el" href="structNode.html">Node</a> *current_root, <a class="el" href="structNode.html">Node</a> *temp)</td></tr>
+<tr class="memdesc:afcdf947c0dbc2860c7b9786d96955601"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funkcja pomocnicza do rekurencyjnego dodawania węzła do drzewa <a class="el" href="classBST.html" title="Klasa reprezentująca drzewo BST.">BST</a>.  <br /></td></tr>
+<tr class="separator:afcdf947c0dbc2860c7b9786d96955601"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a60bc28d3fd377a0a99b2e94375ae2597" id="r_a60bc28d3fd377a0a99b2e94375ae2597"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a60bc28d3fd377a0a99b2e94375ae2597">purge_helper</a> (<a class="el" href="structNode.html">Node</a> *node)</td></tr>
+<tr class="memdesc:a60bc28d3fd377a0a99b2e94375ae2597"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funkcja pomocnicza do rekurencyjnego usuwania wszystkich węzłów w poddrzewie.  <br /></td></tr>
+<tr class="separator:a60bc28d3fd377a0a99b2e94375ae2597"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0331a3c2cea6b610724af23291d8a51b" id="r_a0331a3c2cea6b610724af23291d8a51b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0331a3c2cea6b610724af23291d8a51b">display_inorder</a> (<a class="el" href="structNode.html">Node</a> *node)</td></tr>
+<tr class="memdesc:a0331a3c2cea6b610724af23291d8a51b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funkcja pomocnicza dla przeglądania i wyświetlania w porządku in-order.  <br /></td></tr>
+<tr class="separator:a0331a3c2cea6b610724af23291d8a51b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae527ac1b2d63b60ff1224dacbc494dee" id="r_ae527ac1b2d63b60ff1224dacbc494dee"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae527ac1b2d63b60ff1224dacbc494dee">display_preorder</a> (<a class="el" href="structNode.html">Node</a> *node)</td></tr>
+<tr class="memdesc:ae527ac1b2d63b60ff1224dacbc494dee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funkcja pomocnicza dla przeglądania i wyświetlania w porządku pre-order.  <br /></td></tr>
+<tr class="separator:ae527ac1b2d63b60ff1224dacbc494dee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7491aff095c65f91a9e28b9f970cc2e8" id="r_a7491aff095c65f91a9e28b9f970cc2e8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7491aff095c65f91a9e28b9f970cc2e8">display_postorder</a> (<a class="el" href="structNode.html">Node</a> *node)</td></tr>
+<tr class="memdesc:a7491aff095c65f91a9e28b9f970cc2e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funkcja pomocnicza dla przeglądania i wyświetlania w porządku post-order.  <br /></td></tr>
+<tr class="separator:a7491aff095c65f91a9e28b9f970cc2e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0074c693d23449802df2f510aa127980" id="r_a0074c693d23449802df2f510aa127980"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0074c693d23449802df2f510aa127980">get_depth_helper</a> (<a class="el" href="structNode.html">Node</a> *node)</td></tr>
+<tr class="separator:a0074c693d23449802df2f510aa127980"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab754b706792367cd6ebf4e7b26ddda3f" id="r_ab754b706792367cd6ebf4e7b26ddda3f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab754b706792367cd6ebf4e7b26ddda3f">get_biggest_helper</a> (<a class="el" href="structNode.html">Node</a> *node)</td></tr>
+<tr class="memdesc:ab754b706792367cd6ebf4e7b26ddda3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Metoda pomocnicza do znalezienia największej wartości w poddrzewie.  <br /></td></tr>
+<tr class="separator:ab754b706792367cd6ebf4e7b26ddda3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e6fc6600ec66390dde6b7948efc9310" id="r_a2e6fc6600ec66390dde6b7948efc9310"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2e6fc6600ec66390dde6b7948efc9310">get_smallest_helper</a> (<a class="el" href="structNode.html">Node</a> *node)</td></tr>
+<tr class="memdesc:a2e6fc6600ec66390dde6b7948efc9310"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funkcja pomocnicza do znalezienia najmniejszej wartości w poddrzewie.  <br /></td></tr>
+<tr class="separator:a2e6fc6600ec66390dde6b7948efc9310"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b3ab91d1357f4a536c684fc324f72bd" id="r_a2b3ab91d1357f4a536c684fc324f72bd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structNode.html">Node</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2b3ab91d1357f4a536c684fc324f72bd">find_helper</a> (<a class="el" href="structNode.html">Node</a> *node, int value)</td></tr>
+<tr class="memdesc:a2b3ab91d1357f4a536c684fc324f72bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funkcja pomocnicza do wyszukiwania węzła o określonej wartości w poddrzewie.  <br /></td></tr>
+<tr class="separator:a2b3ab91d1357f4a536c684fc324f72bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aff24ac97e78f541636b24caddb0b5945" id="r_aff24ac97e78f541636b24caddb0b5945"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aff24ac97e78f541636b24caddb0b5945">display_tree_helper</a> (<a class="el" href="structNode.html">Node</a> *node, int depth, int left, int right, std::vector&lt; std::vector&lt; std::string &gt; &gt; &amp;levels)</td></tr>
+<tr class="memdesc:aff24ac97e78f541636b24caddb0b5945"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funkcja pomocnicza do graficznego wyświetlania drzewa <a class="el" href="classBST.html" title="Klasa reprezentująca drzewo BST.">BST</a>.  <br /></td></tr>
+<tr class="separator:aff24ac97e78f541636b24caddb0b5945"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Atrybuty prywatne</h2></td></tr>
+<tr class="memitem:a2fe6f9051e991d1b71ead4bd83477a71" id="r_a2fe6f9051e991d1b71ead4bd83477a71"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structNode.html">Node</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2fe6f9051e991d1b71ead4bd83477a71">root</a></td></tr>
+<tr class="memdesc:a2fe6f9051e991d1b71ead4bd83477a71"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wskaźnik na korzeń drzewa.  <br /></td></tr>
+<tr class="separator:a2fe6f9051e991d1b71ead4bd83477a71"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Opis szczegółowy</h2>
 <div class="textblock"><p>Klasa reprezentująca drzewo <a class="el" href="classBST.html" title="Klasa reprezentująca drzewo BST.">BST</a>. </p>
@@ -224,6 +275,51 @@ Metody publiczne</h2></td></tr>
 
 </div>
 </div>
+<a id="afcdf947c0dbc2860c7b9786d96955601" name="afcdf947c0dbc2860c7b9786d96955601"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afcdf947c0dbc2860c7b9786d96955601">&#9670;&#160;</a></span>add_node_helper()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void BST::add_node_helper </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>node_value</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structNode.html">Node</a> *</td>          <td class="paramname"><span class="paramname"><em>current_root</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structNode.html">Node</a> *</td>          <td class="paramname"><span class="paramname"><em>temp</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Funkcja pomocnicza do rekurencyjnego dodawania węzła do drzewa <a class="el" href="classBST.html" title="Klasa reprezentująca drzewo BST.">BST</a>. </p>
+<p>Funkcja ta jest używana wewnętrznie do przeglądania drzewa i wstawiania nowego węzła w odpowiednim miejscu zgodnie z zasadami <a class="el" href="classBST.html" title="Klasa reprezentująca drzewo BST.">BST</a>.</p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">node_value</td><td>Wartość nowego węzła do dodania. </td></tr>
+    <tr><td class="paramname">current_root</td><td>Wskaźnik na aktualnie przetwarzany korzeń. </td></tr>
+    <tr><td class="paramname">temp</td><td>Tymczasowy wskaźnik do manipulacji węzłami. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a4f27aab9ac30f53a07c0a4d038b60622" name="a4f27aab9ac30f53a07c0a4d038b60622"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4f27aab9ac30f53a07c0a4d038b60622">&#9670;&#160;</a></span>delete_node()</h2>
 
@@ -275,6 +371,105 @@ Metody publiczne</h2></td></tr>
 
 </div>
 </div>
+<a id="a0331a3c2cea6b610724af23291d8a51b" name="a0331a3c2cea6b610724af23291d8a51b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0331a3c2cea6b610724af23291d8a51b">&#9670;&#160;</a></span>display_inorder()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void BST::display_inorder </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structNode.html">Node</a> *</td>          <td class="paramname"><span class="paramname"><em>node</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Funkcja pomocnicza dla przeglądania i wyświetlania w porządku in-order. </p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">node</td><td>Wskaźnik na aktualnie przetwarzany węzeł. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a7491aff095c65f91a9e28b9f970cc2e8" name="a7491aff095c65f91a9e28b9f970cc2e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7491aff095c65f91a9e28b9f970cc2e8">&#9670;&#160;</a></span>display_postorder()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void BST::display_postorder </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structNode.html">Node</a> *</td>          <td class="paramname"><span class="paramname"><em>node</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Funkcja pomocnicza dla przeglądania i wyświetlania w porządku post-order. </p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">node</td><td>Wskaźnik na aktualnie przetwarzany węzeł. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ae527ac1b2d63b60ff1224dacbc494dee" name="ae527ac1b2d63b60ff1224dacbc494dee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae527ac1b2d63b60ff1224dacbc494dee">&#9670;&#160;</a></span>display_preorder()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void BST::display_preorder </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structNode.html">Node</a> *</td>          <td class="paramname"><span class="paramname"><em>node</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Funkcja pomocnicza dla przeglądania i wyświetlania w porządku pre-order. </p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">node</td><td>Wskaźnik na aktualnie przetwarzany węzeł. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="af1a1696725c0747b07f23d99c6d01bd8" name="af1a1696725c0747b07f23d99c6d01bd8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af1a1696725c0747b07f23d99c6d01bd8">&#9670;&#160;</a></span>display_tree()</h2>
 
@@ -312,6 +507,62 @@ Szerokość jest obliczana tak, aby zapewnić odpowiednie odstępy między węz�
 
 </div>
 </div>
+<a id="aff24ac97e78f541636b24caddb0b5945" name="aff24ac97e78f541636b24caddb0b5945"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aff24ac97e78f541636b24caddb0b5945">&#9670;&#160;</a></span>display_tree_helper()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void BST::display_tree_helper </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structNode.html">Node</a> *</td>          <td class="paramname"><span class="paramname"><em>node</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>depth</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>left</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>right</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; std::vector&lt; std::string &gt; &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>levels</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Funkcja pomocnicza do graficznego wyświetlania drzewa <a class="el" href="classBST.html" title="Klasa reprezentująca drzewo BST.">BST</a>. </p>
+<p>Funkcja rekurencyjnie przechodzi przez drzewo i wypełnia wektor wektorów wartościami węzłów, aby reprezentować strukturę drzewa </p><dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">node</td><td>Aktualnie przetwarzany węzeł </td></tr>
+    <tr><td class="paramname">depth</td><td>Aktualny poziom głębokości w drzewie </td></tr>
+    <tr><td class="paramname">left</td><td>Lewa granica pozycji aktualnego węzła </td></tr>
+    <tr><td class="paramname">right</td><td>Prawa granica pozycji aktualnego węzła </td></tr>
+    <tr><td class="paramname">levels</td><td>Referencja do wektora wektorów przechowującego wartości węzłów na każdym poziomie </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="aa507fc9358d1dd2bef9f684b79e0fd26" name="aa507fc9358d1dd2bef9f684b79e0fd26"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa507fc9358d1dd2bef9f684b79e0fd26">&#9670;&#160;</a></span>find()</h2>
 
@@ -338,6 +589,46 @@ Szerokość jest obliczana tak, aby zapewnić odpowiednie odstępy między węz�
 
 </div>
 </div>
+<a id="a2b3ab91d1357f4a536c684fc324f72bd" name="a2b3ab91d1357f4a536c684fc324f72bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b3ab91d1357f4a536c684fc324f72bd">&#9670;&#160;</a></span>find_helper()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structNode.html">Node</a> * BST::find_helper </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structNode.html">Node</a> *</td>          <td class="paramname"><span class="paramname"><em>node</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>value</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Funkcja pomocnicza do wyszukiwania węzła o określonej wartości w poddrzewie. </p>
+<p>Ta rekurencyjna funkcja przeszukuje poddrzewo w celu znalezienia węzła o podanej wartości i zwraca wskaźnik na ten węzeł. Jeśli wartość nie zostanie znaleziona, funkcja zwraca <code>nullptr</code>.</p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">node</td><td>Wskaźnik na korzeń poddrzewa. </td></tr>
+    <tr><td class="paramname">value</td><td>Wartość do wyszukania. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Zwraca</dt><dd>Node* Wskaźnik na węzeł zawierający wartość lub <code>nullptr</code>, jeśli nie znaleziono. </dd></dl>
+
+</div>
+</div>
 <a id="aa55cf79549581decec48177272c31c63" name="aa55cf79549581decec48177272c31c63"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa55cf79549581decec48177272c31c63">&#9670;&#160;</a></span>get_biggest()</h2>
 
@@ -355,6 +646,40 @@ Szerokość jest obliczana tak, aby zapewnić odpowiednie odstępy między węz�
 
 <p>Pobiera największą wartość w drzewie <a class="el" href="classBST.html" title="Klasa reprezentująca drzewo BST.">BST</a>. </p>
 <dl class="section return"><dt>Zwraca</dt><dd>int Największa wartość przechowywana w drzewie <a class="el" href="classBST.html" title="Klasa reprezentująca drzewo BST.">BST</a>. </dd></dl>
+
+</div>
+</div>
+<a id="ab754b706792367cd6ebf4e7b26ddda3f" name="ab754b706792367cd6ebf4e7b26ddda3f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab754b706792367cd6ebf4e7b26ddda3f">&#9670;&#160;</a></span>get_biggest_helper()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int BST::get_biggest_helper </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structNode.html">Node</a> *</td>          <td class="paramname"><span class="paramname"><em>node</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Metoda pomocnicza do znalezienia największej wartości w poddrzewie. </p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">node</td><td>Wskaźnik na korzeń poddrzewa. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Zwraca</dt><dd>int Największa wartość w poddrzewie. </dd></dl>
 
 </div>
 </div>
@@ -376,6 +701,31 @@ Szerokość jest obliczana tak, aby zapewnić odpowiednie odstępy między węz�
 <p>Pobiera głębokość (wysokość) drzewa <a class="el" href="classBST.html" title="Klasa reprezentująca drzewo BST.">BST</a>. </p>
 <p>Głębokość jest definiowana jako liczba krawędzi na najdłuższej ścieżce od korzenia do liścia. Puste drzewo ma głębokość 0.</p>
 <dl class="section return"><dt>Zwraca</dt><dd>int Głębokość drzewa <a class="el" href="classBST.html" title="Klasa reprezentująca drzewo BST.">BST</a>. </dd></dl>
+
+</div>
+</div>
+<a id="a0074c693d23449802df2f510aa127980" name="a0074c693d23449802df2f510aa127980"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0074c693d23449802df2f510aa127980">&#9670;&#160;</a></span>get_depth_helper()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int BST::get_depth_helper </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structNode.html">Node</a> *</td>          <td class="paramname"><span class="paramname"><em>node</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -427,6 +777,41 @@ Szerokość jest obliczana tak, aby zapewnić odpowiednie odstępy między węz�
 
 </div>
 </div>
+<a id="a2e6fc6600ec66390dde6b7948efc9310" name="a2e6fc6600ec66390dde6b7948efc9310"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e6fc6600ec66390dde6b7948efc9310">&#9670;&#160;</a></span>get_smallest_helper()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int BST::get_smallest_helper </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structNode.html">Node</a> *</td>          <td class="paramname"><span class="paramname"><em>node</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Funkcja pomocnicza do znalezienia najmniejszej wartości w poddrzewie. </p>
+<p>Ta rekurencyjna funkcja przeszukuje najbardziej lewy szlak poddrzewa, aby znaleźć i zwrócić najmniejszą wartość.</p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">node</td><td>Wskaźnik na korzeń poddrzewa. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Zwraca</dt><dd>int Najmniejsza wartość w poddrzewie. </dd></dl>
+
+</div>
+</div>
 <a id="a03aee1af164735fb9af0c2c8ea81b518" name="a03aee1af164735fb9af0c2c8ea81b518"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a03aee1af164735fb9af0c2c8ea81b518">&#9670;&#160;</a></span>load_from_text_file()</h2>
 
@@ -472,6 +857,40 @@ Szerokość jest obliczana tak, aby zapewnić odpowiednie odstępy między węz�
 
 </div>
 </div>
+<a id="a60bc28d3fd377a0a99b2e94375ae2597" name="a60bc28d3fd377a0a99b2e94375ae2597"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a60bc28d3fd377a0a99b2e94375ae2597">&#9670;&#160;</a></span>purge_helper()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void BST::purge_helper </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structNode.html">Node</a> *</td>          <td class="paramname"><span class="paramname"><em>node</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Funkcja pomocnicza do rekurencyjnego usuwania wszystkich węzłów w poddrzewie. </p>
+<p>Funkcja ta jest używana wewnętrznie do przeglądania poddrzewa zakorzenionego w danym węźle i usuwania wszystkich węzłów w celu zwolnienia pamięci.</p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">node</td><td>Wskaźnik na korzeń poddrzewa do usunięcia. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="adc7b5abe38090a2d813c1dce3a5a1979" name="adc7b5abe38090a2d813c1dce3a5a1979"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#adc7b5abe38090a2d813c1dce3a5a1979">&#9670;&#160;</a></span>save()</h2>
 
@@ -488,6 +907,31 @@ Szerokość jest obliczana tak, aby zapewnić odpowiednie odstępy między węz�
 </div><div class="memdoc">
 
 <p>Zapisuje aktualny stan drzewa <a class="el" href="classBST.html" title="Klasa reprezentująca drzewo BST.">BST</a>. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Dokumentacja atrybutów składowych</h2>
+<a id="a2fe6f9051e991d1b71ead4bd83477a71" name="a2fe6f9051e991d1b71ead4bd83477a71"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2fe6f9051e991d1b71ead4bd83477a71">&#9670;&#160;</a></span>root</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structNode.html">Node</a>* BST::root</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Wskaźnik na korzeń drzewa. </p>
 
 </div>
 </div>
