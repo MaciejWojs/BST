@@ -22,6 +22,7 @@
 #include <fstream>
 #include <cmath>
 #include <vector>
+#include <compare>
 
 Node::Node() : Node({}) {}
 
@@ -261,22 +262,40 @@ void BST::load_from_text_file(std::string path) {
     file.close();
 }
 
-Node* BST::find(int value) {
-    Node* current = root;
-    std::cout << "Sciezka wyszukiwania: ";
+Node* BST::find_helper(Node* node, int value) {
+    if (!node) {
+        return nullptr;
+    }
 
-    while (current != nullptr) {
-        std::cout << current->value;
-        if (value == current->value) {
-            std::cout << std::endl;
-            return current;
-        } else if (value < current->value) {
-            std::cout << " -> ";
-            current = current->left;
-        } else {
-            std::cout << " -> ";
-            current = current->right;
-        }
+    Node* result = nullptr;
+
+    std::cout << node;
+    if (value == node->value) {
+        std::cout << std::endl;
+        return node;
+    } else if (value < node->value) {
+        std::cout << " -> ";
+        result = find_helper(node->left, value);
+    } else {
+        std::cout << " -> ";
+        result = find_helper(node->right, value);
+    }
+
+    return result;
+
+}
+
+Node* BST::find(int value) {
+    if (!root) {
+        std::cout << "Cannot find value " << value << " in an empty tree" << std::endl;
+        return nullptr;
+    }
+
+    std::cout << "Sciezka wyszukiwania wartosci " << value << ": ";
+
+    Node* result = find_helper(root, value);
+    if (result) {
+        return result;
     }
 
     std::cout << "null" << std::endl;

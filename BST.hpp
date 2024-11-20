@@ -233,6 +233,7 @@ class BST {
      */
     int get_biggest_helper(Node* node);
     int get_smallest_helper(Node* node);
+    Node* find_helper(Node* node, int value);
     /**
      * \~english
      * @brief Helper function for displaying binary search tree in a graphical way

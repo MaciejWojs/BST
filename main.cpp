@@ -34,4 +34,5 @@ int main() {
     bst.find(18);
     bst.purge();
     bst.display(PREORDER);
+    bst.find(18);
 }
