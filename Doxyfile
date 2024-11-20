@@ -524,7 +524,7 @@ EXTRACT_ALL            = YES
 # be included in the documentation.
 # The default value is: NO.
 
-EXTRACT_PRIVATE        = NO
+EXTRACT_PRIVATE        = YES
 
 # If the EXTRACT_PRIV_VIRTUAL tag is set to YES, documented private virtual
 # methods of a class will be included in the documentation.
@@ -2050,7 +2050,7 @@ LATEX_EXTRA_FILES      =
 # If the PDF_HYPERLINKS tag is set to YES, the LaTeX that is generated is
 # prepared for conversion to PDF (using ps2pdf or pdflatex). The PDF file will
 # contain links (just like the HTML output) instead of page references. This
-# makes the output suitable for online browsing using a PDF viewer.
+# makes the output suitable for online browsing usprivaing a PDF viewer.
 # The default value is: YES.
 # This tag requires that the tag GENERATE_LATEX is set to YES.
 
