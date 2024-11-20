@@ -32,6 +32,8 @@ int main() {
 
     bst.find(1);
     bst.find(18);
+    bst.delete_node(1);
+    bst.display(PREORDER);
     bst.purge();
     bst.display(PREORDER);
     bst.find(18);

@@ -22,7 +22,6 @@
 #include <fstream>
 #include <cmath>
 #include <vector>
-#include <compare>
 
 Node::Node() : Node({}) {}
 
@@ -339,4 +338,27 @@ int BST::get_smallest_helper(Node* node) {
     }
 
     return get_smallest_helper(node->left);
+}
+
+
+void BST::delete_node(int value) {
+    Node* node = find(value);
+
+    if (!node) {
+        std::cout << "Value " << value << " is not present in the tree" << std::endl;
+        return;
+    }
+
+    std::cout << "Deleting node " << value << std::endl;
+
+    if (!node->left && !node->right) {
+        Node* parent = node->parent;
+        if (parent->left == node) {
+            parent->left = nullptr;
+        } else {
+            parent->right = nullptr;
+        }
+        delete node;
+    }
+
 }
