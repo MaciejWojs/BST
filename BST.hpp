@@ -232,8 +232,53 @@ class BST {
      * @return int Największa wartość w poddrzewie.
      */
     int get_biggest_helper(Node* node);
+
+    /**
+     * \~english
+     * @brief Helper method to find the smallest value in a subtree.
+     *
+     * @details This recursive function traverses the leftmost path of a subtree
+     * to locate and return the smallest value.
+     *
+     * @param node Pointer to the root node of the subtree.
+     * @return int The smallest value in the subtree.
+     *
+     * \~polish
+     * @brief Funkcja pomocnicza do znalezienia najmniejszej wartości w poddrzewie.
+     *
+     * @details Ta rekurencyjna funkcja przeszukuje najbardziej lewy szlak poddrzewa,
+     * aby znaleźć i zwrócić najmniejszą wartość.
+     *
+     * @param node Wskaźnik na korzeń poddrzewa.
+     * @return int Najmniejsza wartość w poddrzewie.
+     */
     int get_smallest_helper(Node* node);
+
+    /**
+     * \~english
+     * @brief Helper method to find a node with a specific value in a subtree.
+     *
+     * @details This recursive function searches a subtree for a node with the
+     * given value and returns a pointer to it. If the value is not found, the
+     * function returns `nullptr`.
+     *
+     * @param node Pointer to the root node of the subtree.
+     * @param value The value to search for.
+     * @return Node* Pointer to the node containing the value, or `nullptr` if not found.
+     *
+     * \~polish
+     * @brief Funkcja pomocnicza do wyszukiwania węzła o określonej wartości w poddrzewie.
+     *
+     * @details Ta rekurencyjna funkcja przeszukuje poddrzewo w celu znalezienia węzła
+     * o podanej wartości i zwraca wskaźnik na ten węzeł. Jeśli wartość nie zostanie
+     * znaleziona, funkcja zwraca `nullptr`.
+     *
+     * @param node Wskaźnik na korzeń poddrzewa.
+     * @param value Wartość do wyszukania.
+     * @return Node* Wskaźnik na węzeł zawierający wartość lub `nullptr`, jeśli nie znaleziono.
+     */
     Node* find_helper(Node* node, int value);
+
     /**
      * \~english
      * @brief Helper function for displaying binary search tree in a graphical way
@@ -305,12 +350,23 @@ class BST {
 
     /**
      * \~english
-     * @brief Deletes a node from the BST.
+     * @brief Deletes a node with the specified value from the BST.
+     *
+     * @details This method searches for a node with the given value in the binary
+     * search tree. If found, the node is removed while preserving the BST properties.
+     *
+     * @param value The value of the node to be deleted.
      *
      * \~polish
-     * @brief Usuwa węzeł z drzewa BST.
+     * @brief Usuwa węzeł o określonej wartości z drzewa BST.
+     *
+     * @details Metoda wyszukuje węzeł o podanej wartości w drzewie BST.
+     * Jeśli węzeł zostanie znaleziony, jest on usuwany przy zachowaniu zasad BST.
+     *
+     * @param value Wartość węzła do usunięcia.
      */
-    void delete_node();
+    void delete_node(int value);
+
 
     /**
      * \~english
@@ -422,6 +478,21 @@ class BST {
      */
     int get_smallest();
 
+    /**
+     * \~english
+     * @brief Displays the BST in a graphical format.
+     *
+     * @details This method visualizes the structure of the binary search tree
+     * by representing nodes and their hierarchy in a graphical manner. It uses
+     * a helper function to recursively build and display the tree levels.
+     *
+     * \~polish
+     * @brief Wyświetla drzewo BST w formacie graficznym.
+     *
+     * @details Ta metoda wizualizuje strukturę drzewa BST, reprezentując węzły
+     * i ich hierarchię w sposób graficzny. Wykorzystuje funkcję pomocniczą do
+     * rekurencyjnego budowania i wyświetlania poziomów drzewa.
+     */
     void display_tree();
 
 };
