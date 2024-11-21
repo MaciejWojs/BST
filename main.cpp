@@ -19,9 +19,11 @@ int main() {
         std::cout << "5 - Find largest element\n";
         std::cout << "6 - Find smallest element\n";
         std::cout << "7 - Print tree\n";
-        std::cout << "8 - Save to file\n";
-        std::cout << "9 - Load tree from file\n";
-        std::cout << "10 - Remove entire tree\n";
+        std::cout << "8 - Save to text file\n";
+        std::cout << "9 - Load tree from text file\n";
+        std::cout << "10 - Load from binary file\n";
+        std::cout << "11 - Save to binary file\n";
+        std::cout << "12 - Remove entire tree\n";
         std::cout << "0 - Exit program\n";
         std::cout << "Your choice: ";
         std::cin >> operation;
@@ -128,8 +130,16 @@ int main() {
                 std::cout << "Tree loaded from file " << choosen_path << ".\n";
             }
             break;
-
         case 10:
+            // ladowanie z binarnego
+
+            break;
+
+        case 11:
+            // zapisywanie do binarnego
+
+            break;
+        case 12:
             {
                 char choice;
                 std::cout << "Are you sure you want to delete the entire tree? [y/n]: ";
