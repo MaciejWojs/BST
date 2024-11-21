@@ -20,9 +20,12 @@ var classBST =
     [ "get_root", "classBST.html#ab4a657e12fee7a4a0fe17e0182b2492a", null ],
     [ "get_smallest", "classBST.html#aaedfae65717e3de45d3afb2268da6dbe", null ],
     [ "get_smallest_helper", "classBST.html#a9fa7c6a79ce48588d31f114f0002111b", null ],
+    [ "load_from_binary_file", "classBST.html#a9b64554cf0885934ef630e07b7a4f142", null ],
     [ "load_from_text_file", "classBST.html#a03aee1af164735fb9af0c2c8ea81b518", null ],
     [ "purge", "classBST.html#ab57605c2f6cbe553f00885a8e29525c0", null ],
     [ "purge_helper", "classBST.html#a60bc28d3fd377a0a99b2e94375ae2597", null ],
     [ "save", "classBST.html#adc7b5abe38090a2d813c1dce3a5a1979", null ],
+    [ "save_helper", "classBST.html#a99e399cc7fa66b0d329ed6fc46d74e57", null ],
+    [ "save_to_binary_file", "classBST.html#aa8a3e418177b3e994c14d7445ab84b29", null ],
     [ "root", "classBST.html#a2fe6f9051e991d1b71ead4bd83477a71", null ]
 ];

@@ -168,6 +168,10 @@ Metody publiczne</h2></td></tr>
 <tr class="memitem:af1a1696725c0747b07f23d99c6d01bd8" id="r_af1a1696725c0747b07f23d99c6d01bd8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af1a1696725c0747b07f23d99c6d01bd8">display_tree</a> ()</td></tr>
 <tr class="memdesc:af1a1696725c0747b07f23d99c6d01bd8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wyświetla drzewo <a class="el" href="classBST.html" title="Klasa reprezentująca drzewo BST.">BST</a> w formacie graficznym.  <br /></td></tr>
 <tr class="separator:af1a1696725c0747b07f23d99c6d01bd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b64554cf0885934ef630e07b7a4f142" id="r_a9b64554cf0885934ef630e07b7a4f142"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9b64554cf0885934ef630e07b7a4f142">load_from_binary_file</a> ()</td></tr>
+<tr class="separator:a9b64554cf0885934ef630e07b7a4f142"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa8a3e418177b3e994c14d7445ab84b29" id="r_aa8a3e418177b3e994c14d7445ab84b29"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa8a3e418177b3e994c14d7445ab84b29">save_to_binary_file</a> ()</td></tr>
+<tr class="separator:aa8a3e418177b3e994c14d7445ab84b29"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Metody prywatne</h2></td></tr>
@@ -201,6 +205,8 @@ Metody prywatne</h2></td></tr>
 <tr class="memitem:aff24ac97e78f541636b24caddb0b5945" id="r_aff24ac97e78f541636b24caddb0b5945"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aff24ac97e78f541636b24caddb0b5945">display_tree_helper</a> (<a class="el" href="structNode.html">Node</a> *node, int depth, int left, int right, std::vector&lt; std::vector&lt; std::string &gt; &gt; &amp;levels)</td></tr>
 <tr class="memdesc:aff24ac97e78f541636b24caddb0b5945"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funkcja pomocnicza do graficznego wyświetlania drzewa <a class="el" href="classBST.html" title="Klasa reprezentująca drzewo BST.">BST</a>.  <br /></td></tr>
 <tr class="separator:aff24ac97e78f541636b24caddb0b5945"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a99e399cc7fa66b0d329ed6fc46d74e57" id="r_a99e399cc7fa66b0d329ed6fc46d74e57"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a99e399cc7fa66b0d329ed6fc46d74e57">save_helper</a> (<a class="el" href="structNode.html">Node</a> *node, std::vector&lt; int &gt; &amp;result)</td></tr>
+<tr class="separator:a99e399cc7fa66b0d329ed6fc46d74e57"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Atrybuty prywatne</h2></td></tr>
@@ -823,6 +829,23 @@ Szerokość jest obliczana tak, aby zapewnić odpowiednie odstępy między węz�
 
 </div>
 </div>
+<a id="a9b64554cf0885934ef630e07b7a4f142" name="a9b64554cf0885934ef630e07b7a4f142"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b64554cf0885934ef630e07b7a4f142">&#9670;&#160;</a></span>load_from_binary_file()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void BST::load_from_binary_file </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a03aee1af164735fb9af0c2c8ea81b518" name="a03aee1af164735fb9af0c2c8ea81b518"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a03aee1af164735fb9af0c2c8ea81b518">&#9670;&#160;</a></span>load_from_text_file()</h2>
 
@@ -918,6 +941,52 @@ Szerokość jest obliczana tak, aby zapewnić odpowiednie odstępy między węz�
 </div><div class="memdoc">
 
 <p>Zapisuje aktualny stan drzewa <a class="el" href="classBST.html" title="Klasa reprezentująca drzewo BST.">BST</a>. </p>
+
+</div>
+</div>
+<a id="a99e399cc7fa66b0d329ed6fc46d74e57" name="a99e399cc7fa66b0d329ed6fc46d74e57"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a99e399cc7fa66b0d329ed6fc46d74e57">&#9670;&#160;</a></span>save_helper()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void BST::save_helper </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structNode.html">Node</a> *</td>          <td class="paramname"><span class="paramname"><em>node</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; int &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>result</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa8a3e418177b3e994c14d7445ab84b29" name="aa8a3e418177b3e994c14d7445ab84b29"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa8a3e418177b3e994c14d7445ab84b29">&#9670;&#160;</a></span>save_to_binary_file()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void BST::save_to_binary_file </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>
