@@ -66,6 +66,11 @@ void BST::add_node(int node_value) {
         root = temp;
         return;
     }
+    if (find(node_value)) {
+        delete temp;
+        std::cout << node_value << " already present in the tree\n";
+        return;
+    }
 
     Node* current_root = root;
     add_node_helper(node_value, current_root, temp);
@@ -173,7 +178,7 @@ void BST::display_tree() {
             // Wyświetlenie wartości komórki z wyrównaniem do int_width znaków
             // std::setw(int_width) ustawia szerokość pola wyświetlania
             // std::cout << std::setw(int_width) << cell;
-            std::cout << std::setw(3) << cell;
+            std::cout << cell;
 
         }
         // Po wyświetleniu wszystkich komórek w poziomie, przejście do nowej linii
@@ -256,10 +261,8 @@ void BST::purge_helper(Node* node) {
 void BST::load_from_text_file(std::string path) {
     std::ifstream file(path, std::ios::in);
 
-    if (file) {
-        std::cout << "Plik " << path << " istnieje!" << std::endl;
-    } else {
-        std::cout << "Plik nie istnieje!" << std::endl;
+    if (!file) {
+        std::cout << "File does not exist!" << std::endl;
     }
 
     int buffer;
@@ -298,7 +301,7 @@ Node* BST::find(int value) {
         return nullptr;
     }
 
-    std::cout << "Sciezka wyszukiwania wartosci " << value << ": ";
+    std::cout << "Path to the value " << value << ": \n";
 
     Node* result = find_helper(root, value);
     if (result) {
