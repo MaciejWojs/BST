@@ -6,6 +6,7 @@ var NAVTREEINDEX0 =
 "BST_8hpp.html#a538b580ce6370e754b5e9bfdff772eab":[1,0,1,2],
 "BST_8hpp.html#a538b580ce6370e754b5e9bfdff772eaba541a7d029edbe0dc4855fa23ba23162b":[1,0,1,2,0],
 "BST_8hpp.html#a538b580ce6370e754b5e9bfdff772eaba9ab94412bf77ddc567d8cb5cd2996d44":[1,0,1,2,2],
+"BST_8hpp.html#a538b580ce6370e754b5e9bfdff772eabab1d5eac4b1dca480c8056eaea7663b7a":[1,0,1,2,3],
 "BST_8hpp.html#a538b580ce6370e754b5e9bfdff772eabacd9d91cf59c093fdfa2b1736a26125ce":[1,0,1,2,1],
 "BST_8hpp_source.html":[1,0,1],
 "annotated.html":[0,0],
