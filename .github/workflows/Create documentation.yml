@@ -24,13 +24,13 @@ jobs:
       - name: Set up Git repository
         uses: actions/checkout@v4
 
-      - name: Check for cache
-        uses: awalsh128/cache-apt-pkgs-action@latest
-        id: cache-packages
-        with:
-          packages: graphviz ghostscript
-          version: 1.0
-          execute_install_scripts: true
+      # - name: Check for cache
+      #   uses: awalsh128/cache-apt-pkgs-action@latest
+      #   id: cache-packages
+      #   with:
+      #     packages: graphviz ghostscript
+      #     version: 1.0
+      #     execute_install_scripts: true
 
       - name: Install required packages
         if: steps.cache-packages.outputs.cache-hit != 'true'
@@ -46,6 +46,18 @@ jobs:
       - name: Pull TeX Live Docker image if not cached
         if: env.IS_TAG == 'true' && steps.docker_cache.outputs.cache-hit != 'true'
         run: docker pull ghcr.io/xu-cheng/texlive-full:latest
+
+
+      - name: PlantUML
+        run: |
+          latest_version=$(curl -s https://api.github.com/repos/plantuml/plantuml/releases/latest | jq -r '.tag_name')
+          download_url="https://github.com/plantuml/plantuml/releases/download/${latest_version}/plantuml-${latest_version#"v"}.jar"
+          wget -q -O plantuml.jar "$download_url"
+
+          echo -e "skinparam monochrome reverse\nskinparam backgroundColor transparent\n" > config.txt
+          echo PLANTUML_CFG_FILE      = config.txt >> Doxyfile
+          echo PLANTUML_JAR_PATH      = plantuml.jar >> Doxyfile
+
 
       - name: Prettify doxygen
         run: |
@@ -72,6 +84,10 @@ jobs:
 
       - name: Generate Doxygen Documentation
         uses: mattnotmitt/doxygen-action@edge
+        with:
+          additional-packages: openjdk21 python3 inkscape
+          enable-latex: ${{ env.IS_TAG }}
+          addidtional_paths: plantuml.jar 
 
       - name: Deploy HTML Documentation
         uses: peaceiris/actions-gh-pages@v4
@@ -79,17 +95,17 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ${{env.HTML_DIR}}
 
-      - name: Compile Polish PDF
-        if: env.IS_TAG == 'true'
-        uses: xu-cheng/latex-action@3.2.0
-        with:
-          extra_system_packages: "inkscape"
-          latexmk_shell_escape: true
-          working_directory: ${{env.LATEX_DIR}}
-          root_file: refman.tex
-
+      # - name: Compile Polish PDF
+      #   if: env.IS_TAG == 'true'
+      #   uses: xu-cheng/latex-action@3.2.0
+      #   with:
+      #     extra_system_packages: "inkscape"
+      #     latexmk_shell_escape: true
+      #     working_directory: ${{env.LATEX_DIR}}
+      #     root_file: refman.tex
+      
       - name: Copy Polish PDF
-        if: env.IS_TAG == 'true'
+        # if: env.IS_TAG == 'true'
         run: cp ${{env.LATEX_DIR}}refman.pdf ./pl-${{ env.FILE_NAME }}.pdf
 
       - name: Change Doxyfile language to English
@@ -99,15 +115,19 @@ jobs:
       - name: Generate English Doxygen Documentation
         if: env.IS_TAG == 'true'
         uses: mattnotmitt/doxygen-action@edge
-
-      - name: Compile English PDF
-        if: env.IS_TAG == 'true'
-        uses: xu-cheng/latex-action@3.2.0
         with:
-          extra_system_packages: "inkscape"
-          latexmk_shell_escape: true
-          working_directory: ${{env.LATEX_DIR}}
-          root_file: refman.tex
+          additional-packages: openjdk21 python3 inkscape
+          enable-latex: ${{ env.IS_TAG }}
+          addidtional_paths: plantuml.jar 
+
+      # - name: Compile English PDF
+      #   if: env.IS_TAG == 'true'
+      #   uses: xu-cheng/latex-action@3.2.0
+      #   with:
+      #     extra_system_packages: "inkscape"
+      #     latexmk_shell_escape: true
+      #     working_directory: ${{env.LATEX_DIR}}
+      #     root_file: refman.tex
 
       - name: Copy English PDF
         if: env.IS_TAG == 'true'
