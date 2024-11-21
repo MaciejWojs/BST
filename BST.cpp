@@ -324,12 +324,12 @@ int BST::get_depth_helper(Node* node) {
 }
 
 int BST::get_biggest() {
-    return get_biggest_helper(root);
+    return (get_biggest_helper(root))->value;
 }
 
-int BST::get_biggest_helper(Node* node) {
+Node* BST::get_biggest_helper(Node* node) {
     if (!node->right) {
-        return node->value;
+        return node;
     }
 
     return get_biggest_helper(node->right);
@@ -337,12 +337,12 @@ int BST::get_biggest_helper(Node* node) {
 
 
 int BST::get_smallest() {
-    return get_smallest_helper(root);
+    return (get_smallest_helper(root))->value;
 }
 
-int BST::get_smallest_helper(Node* node) {
+Node* BST::get_smallest_helper(Node* node) {
     if (!node->left) {
-        return node->value;
+        return node;
     }
 
     return get_smallest_helper(node->left);
@@ -360,13 +360,52 @@ void BST::delete_node(int value) {
     std::cout << "Deleting node " << value << std::endl;
 
     if (!node->left && !node->right) {
-        Node* parent = node->parent;
-        if (parent->left == node) {
-            parent->left = nullptr;
+        if (node == root) {
+            root = nullptr;
         } else {
-            parent->right = nullptr;
+            Node* parent = node->parent;
+            if (parent->left == node) {
+                parent->left = nullptr;
+            } else {
+                parent->right = nullptr;
+            }
         }
         delete node;
+        return;
     }
 
+    if (node->left && node->right) {
+        Node* successor = get_smallest_helper(node->right);
+        node->value = successor->value;
+        // delete_node(successor->value);
+        bool does_not_have_children = !successor->left && !successor->right;
+        successor->parent->left = (does_not_have_children) ? nullptr : successor->right;
+
+        // if (does_not_have_children) {
+        //     successor->parent->left = nullptr;
+        // } else {
+        //     successor->parent->left = successor->right;
+        // }
+        delete successor;
+        return;
+    }
+
+    Node* child = nullptr;
+    if (node->left) {
+        child = node->left;
+    } else {
+        child = node->right;
+    }
+    if (node == root) {
+        root = child;
+    } else {
+        Node* parent = node->parent;
+        if (parent->left == node) {
+            parent->left = child;
+        } else {
+            parent->right = child;
+        }
+    }
+    child->parent = node->parent;
+    delete node;
 }

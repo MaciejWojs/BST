@@ -98,6 +98,7 @@ int main() {
 
         case 8:
             // (Missing implementation for saving tree to file)
+            break;
 
         case 9:
             bst.load_from_text_file(path);
