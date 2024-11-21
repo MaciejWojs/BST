@@ -263,6 +263,12 @@ void BST::load_from_text_file(std::string path) {
 
     if (!file) {
         std::cout << "File does not exist!" << std::endl;
+        return;
+    }
+
+    if (!file.is_open()) {
+        std::cout << "Can't open the file!" << std::endl;
+        return;
     }
 
     int buffer;
@@ -422,10 +428,16 @@ void BST::save_helper(Node* node, std::vector<int>& result) {
     save_helper(node->right, result);
 }
 void BST::save_to_binary_file() {
+    if (!root) {
+        std::cout << "\nEmpty tree, aborting the save\n";
+        return;
+    }
     std::string path = "tree.dat";
     std::vector<int>saved_values;
     save_helper(root, saved_values);
     std::fstream file(path, std::ios::out | std::ios::binary);
+
+
 
     if (!file.is_open()) {
         std::cout << "Can't open the file!" << std::endl;
@@ -446,6 +458,11 @@ void BST::load_from_binary_file() {
 
     std::fstream file(path, std::ios::in | std::ios::binary);
 
+    if (!file) {
+        std::cout << "File does not exist!" << std::endl;
+        return;
+    }
+
     if (!file.is_open()) {
         std::cout << "Can't open the file!" << std::endl;
         return;
@@ -456,5 +473,29 @@ void BST::load_from_binary_file() {
         add_node(tmp);
     }
 
+    file.close();
+}
+
+void BST::save() {
+    if (!root) {
+        std::cout << "\nEmpty tree, aborting the save\n";
+        return;
+    }
+    std::string path = "values.txt";
+    std::fstream file(path, std::ios::out);
+
+
+
+    if (!file.is_open()) {
+        std::cout << "Can't open the file!" << std::endl;
+        return;
+    }
+    std::vector<int> saved_values;
+    save_helper(root, saved_values);
+    for (int element : saved_values) {
+        file << element << "\n";
+
+    }
+    std::cout << "Saved to file " << path << "\n";
     file.close();
 }

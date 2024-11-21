@@ -99,7 +99,7 @@ int main() {
             }
 
         case 8:
-            // (Missing implementation for saving tree to file)
+            bst.save();
             break;
 
         case 9:
