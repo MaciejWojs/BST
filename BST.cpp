@@ -164,14 +164,17 @@ void BST::display_tree() {
     // Wywołanie funkcji pomocniczej która wypełni wektor levels wartościami węzłów
     // Parametry: root (korzeń), 0 (początkowa głębokość), 0 (lewy indeks), width (prawy indeks), levels (referencja do wektora)
     display_tree_helper(root, 0, 0, width, levels);
-
+    int i = 0;
     // Pętla przez każdy poziom drzewa (każdy wiersz w wektorze levels)
     for (const auto& level : levels) {
+        std::cout << "nr. " << std::setw(3) << std::left << ++i;
         // Pętla przez każdą komórkę w danym poziomie
         for (const auto& cell : level) {
             // Wyświetlenie wartości komórki z wyrównaniem do int_width znaków
             // std::setw(int_width) ustawia szerokość pola wyświetlania
-            std::cout << std::setw(int_width) << cell;
+            // std::cout << std::setw(int_width) << cell;
+            std::cout << std::setw(3) << cell;
+
         }
         // Po wyświetleniu wszystkich komórek w poziomie, przejście do nowej linii
         std::cout << std::endl;
