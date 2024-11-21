@@ -39,7 +39,8 @@
 enum display_mode {
     INORDER,   /**< \~english @brief In-order traversal / \~polish @brief Przeglądanie w porządku "in-order". */
     PREORDER,  /**< \~english @brief Pre-order traversal / \~polish @brief Przeglądanie w porządku "pre-order". */
-    POSTORDER  /**< \~english @brief Post-order traversal / \~polish @brief Przeglądanie w porządku "post-order". */
+    POSTORDER,  /**< \~english @brief Post-order traversal / \~polish @brief Przeglądanie w porządku "post-order". */
+    ALL
 };
 
 /**

@@ -11,43 +11,43 @@ int main() {
 
     while (true) {
 
-        std::cout << "---Podaj Numer Operacji---\n";
-        std::cout << "1 - Dodaj element\n";
-        std::cout << "2 - Usun element\n";
-        std::cout << "3 - Wyswietl drzewo\n";
-        std::cout << "4 - Znajdz element\n";
-        std::cout << "5 - Znajdz najwiekszy\n";
-        std::cout << "6 - Znajdz najmniejszy\n";
-        std::cout << "7 - Wypisz drzewo\n";
-        std::cout << "8 - Zapisz do pliku\n";
-        std::cout << "9 - Wczytaj drzewo z pliku\n";
-        std::cout << "10 - Usun cale drzewo\n";
-        std::cout << "0 - Zakoncz program\n";
-        std::cout << "Twoj wybor: ";
+        std::cout << "---Enter Operation Number---\n";
+        std::cout << "1 - Add element\n";
+        std::cout << "2 - Remove element\n";
+        std::cout << "3 - Display tree\n";
+        std::cout << "4 - Find element\n";
+        std::cout << "5 - Find largest element\n";
+        std::cout << "6 - Find smallest element\n";
+        std::cout << "7 - Print tree\n";
+        std::cout << "8 - Save to file\n";
+        std::cout << "9 - Load tree from file\n";
+        std::cout << "10 - Remove entire tree\n";
+        std::cout << "0 - Exit program\n";
+        std::cout << "Your choice: ";
         std::cin >> operation;
 
         switch (operation) {
         case 0:
-            std::cout << "Zamykanie programu.\n";
+            std::cout << "Closing the program.\n";
             return 0;
 
         case 1:
             {
                 int value;
-                std::cout << "\nPodaj wartosc: ";
+                std::cout << "\nEnter value: ";
                 std::cin >> value;
                 bst.add_node(value);
-                std::cout << "Dodano element.\n";
+                std::cout << "Element added.\n";
                 break;
             }
 
         case 2:
             {
                 int value;
-                std::cout << "\nPodaj wartosc do usuniecia: ";
+                std::cout << "\nEnter value to remove: ";
                 std::cin >> value;
                 bst.delete_node(value);
-                std::cout << "Usunieto element.\n";
+                std::cout << "Element removed.\n";
                 break;
             }
 
@@ -58,71 +58,74 @@ int main() {
         case 4:
             {
                 int value;
-                std::cout << "\nPodaj szukana wartosc: ";
+                std::cout << "\nEnter value to search for: ";
                 std::cin >> value;
                 if (bst.find(value)) {
-                    std::cout << "Znaleziono element: " << value << ".\n";
+                    std::cout << "Found element: " << value << ".\n";
                 } else {
-                    std::cout << "Nie znaleziono elementu: " << value << ".\n";
+                    std::cout << "Element not found: " << value << ".\n";
                 }
                 break;
             }
 
         case 5:
-            std::cout << "Najwieksza wartosc to: " << bst.get_biggest() << ".\n";
+            std::cout << "The largest value is: " << bst.get_biggest() << ".\n";
             break;
 
         case 6:
-            std::cout << "Najmniejsza wartosc to: " << bst.get_smallest() << ".\n";
+            std::cout << "The smallest value is: " << bst.get_smallest() << ".\n";
             break;
 
         case 7:
             {
                 int mode_choice;
-                std::cout << "Wybierz tryb wypisywania drzewa:\n";
+                std::cout << "Choose tree display mode:\n";
                 std::cout << "0 - In-order\n";
                 std::cout << "1 - Pre-order\n";
                 std::cout << "2 - Post-order\n";
-                std::cout << "Twoj wybor: ";
+                std::cout << "3 - All of the above\n";
+                std::cout << "Your choice: ";
                 std::cin >> mode_choice;
 
-                if (mode_choice >= 0 && mode_choice <= 2) {
+                if (mode_choice >= 0 && mode_choice <= 3) {
                     display_mode mode = static_cast<display_mode>(mode_choice);
-                    bst.display(mode); // Funkcja wypisujaca drzewo w wybranym porzadku.
+                    bst.display(mode);
                 } else {
-                    std::cout << "Bledny wybor! Sprobuj ponownie.\n";
+                    std::cout << "Invalid choice! Try again.\n";
                 }
                 break;
             }
 
         case 8:
-            //
+            // (Missing implementation for saving tree to file)
 
         case 9:
-            bst.load_from_text_file(path); // Funkcja wczytujaca drzewo z pliku.
-            std::cout << "Drzewo wczytano z pliku " << path << ".\n";
+            bst.load_from_text_file(path);
+            std::cout << "Tree loaded from file " << path << ".\n";
             break;
 
         case 10:
             {
                 char choice;
-                std::cout << "Czy na pewno chcesz usunac cale drzewo? [y/n]: ";
+                std::cout << "Are you sure you want to delete the entire tree? [y/n]: ";
                 std::cin >> choice;
 
                 if (choice == 'y' || choice == 'Y') {
-                    bst.purge(); // Funkcja usuwajaca cale drzewo.
-                    std::cout << "Usunieto cale drzewo.\n";
+                    bst.purge();
+                    std::cout << "Entire tree removed.\n";
                 } else if (choice == 'n' || choice == 'N') {
-                    std::cout << "Nie usunieto drzewa.\n";
+                    std::cout << "Tree not removed.\n";
                 } else {
-                    std::cout << "Nieprawidlowy wybor.\n";
+                    std::cout << "Invalid choice.\n";
                 }
                 break;
             }
 
         default:
-            std::cout << "Bledny numer operacji! Sprobuj ponownie.\n";
+            std::cout << "Invalid operation number! Try again.\n";
             break;
         }
+        std::cout << "Press enter to continue\n";
+        std::cin.get();std::cin.get();
     }
 }

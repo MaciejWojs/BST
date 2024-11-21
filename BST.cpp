@@ -225,6 +225,11 @@ void BST::display(display_mode mode) {
         std::cout << "PRE-order: ";
         display_preorder(root);
         break;
+    case ALL:
+        display(INORDER);
+        display(POSTORDER);
+        display(PREORDER);
+        break;
     default:
         std::cout << "Unknown display method\n";
         break;
