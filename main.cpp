@@ -131,7 +131,7 @@ int main() {
             }
             break;
         case 10:
-            // ladowanie z binarnego
+            bst.load_from_binary_file();
 
             break;
 

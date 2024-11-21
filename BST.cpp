@@ -427,8 +427,13 @@ void BST::save_to_binary_file() {
     save_helper(root, saved_values);
     std::fstream file(path, std::ios::out | std::ios::binary);
 
-    file.write(reinterpret_cast<char*>(&saved_values), saved_values.size() * sizeof(int));
-    std::cout << "Zapisywanie do pliku " << path << "\n";
+    if (!file.is_open()) {
+        std::cout << "Can't open the file!" << std::endl;
+        return;
+    }
+
+    file.write(reinterpret_cast<char*>(&saved_values[0]), saved_values.size() * sizeof(int));
+    std::cout << "Saving to file " << path << "\n";
 #ifdef DEBUG
     std::cout << "Rozmiar pliku: " << sizeof(int) * saved_values.size() << "B\n";
 #endif
@@ -438,11 +443,18 @@ void BST::save_to_binary_file() {
 }
 void BST::load_from_binary_file() {
     std::string path = "tree.dat";
-    std::vector<int>recived_values;
-    std::fstream file(path, std::ios::in | std::ios::binary);
-    file.read(reinterpret_cast<char*>(&recived_values), sizeof(char));
-    for (int e : recived_values) {
-        std::cout << e << " ";
-    }
-}
 
+    std::fstream file(path, std::ios::in | std::ios::binary);
+
+    if (!file.is_open()) {
+        std::cout << "Can't open the file!" << std::endl;
+        return;
+    }
+
+    int tmp;
+    while (file.read(reinterpret_cast<char*>(&tmp), sizeof(tmp))) {
+        add_node(tmp);
+    }
+
+    file.close();
+}
