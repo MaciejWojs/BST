@@ -366,6 +366,7 @@ class BST {
      * @param levels Referencja do wektora wektorów przechowującego wartości węzłów na każdym poziomie
      */
     void display_tree_helper(Node* node, int depth, int left, int right, std::vector<std::vector<std::string>>& levels);
+    void save_helper(Node* node, std::vector<int>& result);
     public:
     /**
      * \~english
@@ -560,6 +561,9 @@ class BST {
      */
     void display_tree();
 
+    void load_from_binary_file();
+
+    void save_to_binary_file();
 };
 
 #endif /* BST_HPP */

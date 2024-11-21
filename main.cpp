@@ -136,7 +136,8 @@ int main() {
             break;
 
         case 11:
-            // zapisywanie do binarnego
+
+            bst.save_to_binary_file();
 
             break;
         case 12:

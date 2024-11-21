@@ -412,3 +412,37 @@ void BST::delete_node(int value) {
     child->parent = node->parent;
     delete node;
 }
+
+void BST::save_helper(Node* node, std::vector<int>& result) {
+    if (!node) {
+        return;
+    }
+    result.push_back(node->value);
+    save_helper(node->left, result);
+    save_helper(node->right, result);
+}
+void BST::save_to_binary_file() {
+    std::string path = "tree.dat";
+    std::vector<int>saved_values;
+    save_helper(root, saved_values);
+    std::fstream file(path, std::ios::out | std::ios::binary);
+
+    file.write(reinterpret_cast<char*>(&saved_values), saved_values.size() * sizeof(int));
+    std::cout << "Zapisywanie do pliku " << path << "\n";
+#ifdef DEBUG
+    std::cout << "Rozmiar pliku: " << sizeof(int) * saved_values.size() << "B\n";
+#endif
+
+
+    file.close();
+}
+void BST::load_from_binary_file() {
+    std::string path = "tree.dat";
+    std::vector<int>recived_values;
+    std::fstream file(path, std::ios::in | std::ios::binary);
+    file.read(reinterpret_cast<char*>(&recived_values), sizeof(char));
+    for (int e : recived_values) {
+        std::cout << e << " ";
+    }
+}
+
