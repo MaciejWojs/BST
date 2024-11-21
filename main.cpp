@@ -6,7 +6,7 @@ int main() {
     Node n;
     BST bst;
 
-    std::string path = "a.txt";
+    std::string path = "values.txt";
     int operation;
 
     while (true) {
@@ -101,8 +101,32 @@ int main() {
             break;
 
         case 9:
-            bst.load_from_text_file(path);
-            std::cout << "Tree loaded from file " << path << ".\n";
+            {
+                int path_choice;
+                std::string choosen_path = path;
+                int i = 0;
+                do {
+                    std::cout << "Load from:\n";
+                    std::cout << "1 - default path(" << path << ")\n";
+                    std::cout << "2 - custom path(user input)\n";
+                    std::cout << "> ";
+                    std::cin >> path_choice;
+
+                    if (path_choice == 2) {
+                        std::cout << "Enter your filename: ";
+                        std::cin >> choosen_path;
+
+                    }
+                    if (++i == 3) {
+                        std::cout << "\nToo many tries, fallback to default\n";
+
+                        break;
+                    }
+                } while (path_choice != 1 && path_choice != 2);
+
+                bst.load_from_text_file(choosen_path);
+                std::cout << "Tree loaded from file " << choosen_path << ".\n";
+            }
             break;
 
         case 10:
