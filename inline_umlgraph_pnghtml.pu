@@ -1,4 +1,4 @@
-@startuml relation.png
+@startuml BST.png
 class BST {
   +BST()
   +~BST()
@@ -38,4 +38,15 @@ class Node {
 }
 
 BST "1" -- "*" Node
+@enduml
+@startuml Node.png
+ class Node {
++ int value
++ Node* right
++ Node* left
++ Node* parent
++ Node()
++ Node(int)
++ ~Node()
+}
 @enduml
