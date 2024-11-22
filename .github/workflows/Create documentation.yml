@@ -28,7 +28,7 @@ jobs:
 
       - uses: actions/setup-java@v4
         with:
-          distribution: 'zulu'
+          distribution: 'oracle'
           java-version: ${{ env.JAVA_VERSION }}
       
       - name: doxygen-install
@@ -106,12 +106,15 @@ jobs:
 
       - name: Compile Polish PDF
         if: env.IS_TAG == 'true'
-        uses: xu-cheng/latex-action@3.2.0
-        with:
-          extra_system_packages: "inkscape"
-          latexmk_shell_escape: true
-          working_directory: ${{env.LATEX_DIR}}
-          root_file: refman.tex
+        working-directory: ${{env.LATEX_DIR}}
+        run: |
+          make -b
+        # uses: xu-cheng/latex-action@3.2.0
+        # with:
+        #   extra_system_packages: "inkscape"
+        #   latexmk_shell_escape: true
+        #   working_directory: ${{env.LATEX_DIR}}
+        #   root_file: refman.tex
       
       - name: Copy Polish PDF
         if: env.IS_TAG == 'true'
