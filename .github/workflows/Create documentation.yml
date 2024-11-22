@@ -54,6 +54,8 @@ jobs:
           download_url="https://github.com/plantuml/plantuml/releases/download/${latest_version}/plantuml-${latest_version#"v"}.jar"
           wget -q -O plantuml.jar "$download_url"
 
+          echo -e "PLANTUML_JAR_PATH      = plantuml.jar\n" >> Doxyfile
+          echo -e "PLANTUML_CFG_FILE      = config.txt\n" >> Doxyfile
           echo -e "skinparam monochrome reverse\nskinparam backgroundColor transparent\n" > config.txt
 
 
