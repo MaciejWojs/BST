@@ -104,17 +104,17 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ${{env.HTML_DIR}}
 
-      # - name: Compile Polish PDF
-      #   if: env.IS_TAG == 'true'
-      #   uses: xu-cheng/latex-action@3.2.0
-      #   with:
-      #     extra_system_packages: "inkscape"
-      #     latexmk_shell_escape: true
-      #     working_directory: ${{env.LATEX_DIR}}
-      #     root_file: refman.tex
+      - name: Compile Polish PDF
+        if: env.IS_TAG == 'true'
+        uses: xu-cheng/latex-action@3.2.0
+        with:
+          extra_system_packages: "inkscape"
+          latexmk_shell_escape: true
+          working_directory: ${{env.LATEX_DIR}}
+          root_file: refman.tex
       
       - name: Copy Polish PDF
-        # if: env.IS_TAG == 'true'
+        if: env.IS_TAG == 'true'
         run: cp ${{env.LATEX_DIR}}refman.pdf ./pl-${{ env.FILE_NAME }}.pdf
 
       - name: Change Doxyfile language to English
