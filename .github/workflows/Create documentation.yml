@@ -85,7 +85,7 @@ jobs:
         with:
           additional-packages: openjdk21 python3 plantuml
           # enable-latex: true
-          # addidtional_paths: plantuml.jar 
+          addidtional_paths: plantuml.jar 
 
       # - name: Deploy HTML Documentation
       #   uses: peaceiris/actions-gh-pages@v4
@@ -115,6 +115,7 @@ jobs:
         uses: mattnotmitt/doxygen-action@edge
         with:
           additional-packages: openjdk21 python3 plantuml
+          addidtional_paths: plantuml.jar
 
       - name: Compile English PDF
         if: env.IS_TAG == 'true'
