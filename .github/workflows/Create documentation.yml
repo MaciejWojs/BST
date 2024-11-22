@@ -24,13 +24,13 @@ jobs:
       - name: Set up Git repository
         uses: actions/checkout@v4
 
-      # - name: Check for cache
-      #   uses: awalsh128/cache-apt-pkgs-action@latest
-      #   id: cache-packages
-      #   with:
-      #     packages: graphviz ghostscript
-      #     version: 1.0
-      #     execute_install_scripts: true
+      - name: Check for cache
+        uses: awalsh128/cache-apt-pkgs-action@latest
+        id: cache-packages
+        with:
+          packages: graphviz ghostscript
+          version: 1.0
+          execute_install_scripts: true
 
       - name: Install required packages
         if: steps.cache-packages.outputs.cache-hit != 'true'
@@ -89,11 +89,11 @@ jobs:
           # enable-latex: true
           addidtional_paths: plantuml.jar 
 
-      # - name: Deploy HTML Documentation
-      #   uses: peaceiris/actions-gh-pages@v4
-      #   with:
-      #     github_token: ${{ secrets.GITHUB_TOKEN }}
-      #     publish_dir: ${{env.HTML_DIR}}
+      - name: Deploy HTML Documentation
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ${{env.HTML_DIR}}
 
       - name: Compile Polish PDF
         if: env.IS_TAG == 'true'
