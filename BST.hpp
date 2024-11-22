@@ -44,6 +44,18 @@ enum display_mode {
 };
 
 /**
+ * @startuml{Node.png}
+ *  class Node {
+ * + int value
+ * + Node* right
+ * + Node* left
+ * + Node* parent
+ * + Node()
+ * + Node(int)
+ * + ~Node()
+ * }
+ * @enduml
+ *
  * \~english
  * @struct Node
  * @brief Represents a single node in a binary search tree.
@@ -118,7 +130,7 @@ struct Node {
 };
 
 /**
- * @startuml{relation.png}
+ * @startuml{BST.png}
  * class BST {
  *   +BST()
  *   +~BST()
