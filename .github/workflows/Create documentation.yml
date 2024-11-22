@@ -13,6 +13,8 @@ env:
   IS_TAG: ${{ startsWith(github.ref, 'refs/tags/') }}
   LATEX_DIR: ./docs/latex/
   HTML_DIR: ./docs/html
+  PACKAGES: graphviz ghostscript python3 inkscape make texlive-font-utils
+  JAVA_VERSION: 21
 
 jobs:
   Create_documentation:
@@ -24,17 +26,27 @@ jobs:
       - name: Set up Git repository
         uses: actions/checkout@v4
 
+      - uses: actions/setup-java@v4
+        with:
+          distribution: 'zulu'
+          java-version: ${{ env.JAVA_VERSION }}
+      
+      - name: doxygen-install
+        uses: ssciwr/doxygen-install@v1.6.0
+        with:
+          version: 1.12.0
+      
       - name: Check for cache
         uses: awalsh128/cache-apt-pkgs-action@latest
         id: cache-packages
         with:
-          packages: graphviz ghostscript
+          packages: ${{ env.PACKAGES }}
           version: 1.0
           execute_install_scripts: true
 
       - name: Install required packages
         if: steps.cache-packages.outputs.cache-hit != 'true'
-        run: sudo apt update && sudo apt install -y graphviz ghostscript
+        run: sudo apt update && sudo apt install -y ${{ env.PACKAGES }}
 
       - name: Cache Docker images
         if: env.IS_TAG == 'true'
@@ -83,11 +95,8 @@ jobs:
           fi
 
       - name: Generate Doxygen Documentation
-        uses: mattnotmitt/doxygen-action@edge
-        with:
-          additional-packages: openjdk21 python3 inkscape
-          enable-latex: ${{ env.IS_TAG }}
-          addidtional_paths: plantuml.jar 
+        run: |
+          doxygen Doxyfile
 
       - name: Deploy HTML Documentation
         uses: peaceiris/actions-gh-pages@v4
@@ -114,11 +123,13 @@ jobs:
 
       - name: Generate English Doxygen Documentation
         if: env.IS_TAG == 'true'
-        uses: mattnotmitt/doxygen-action@edge
-        with:
-          additional-packages: openjdk21 python3 inkscape
-          enable-latex: ${{ env.IS_TAG }}
-          addidtional_paths: plantuml.jar 
+        run: doxygen Doxyfile
+      #   if: env.IS_TAG == 'true'
+      #   uses: mattnotmitt/doxygen-action@edge
+      #   with:
+      #     additional-packages: openjdk21 python3 inkscape
+      #     enable-latex: ${{ env.IS_TAG }}
+      #     addidtional_paths: plantuml.jar 
 
       # - name: Compile English PDF
       #   if: env.IS_TAG == 'true'
