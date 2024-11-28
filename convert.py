@@ -6,7 +6,9 @@ import sys
 def generate_uml_comment(class_name, class_body):
     return f"""/**
 @startuml
+class {class_name} {{
 {''.join(class_body)}
+}}
 @enduml
 */"""
 
