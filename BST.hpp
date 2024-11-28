@@ -44,18 +44,6 @@ enum display_mode {
 };
 
 /**
- * @startuml{Node.png}
- *  class Node {
- * + int value
- * + Node* right
- * + Node* left
- * + Node* parent
- * + Node()
- * + Node(int)
- * + ~Node()
- * }
- * @enduml
- *
  * \~english
  * @struct Node
  * @brief Represents a single node in a binary search tree.
@@ -130,51 +118,6 @@ struct Node {
 };
 
 /**
- * @startuml{BST.png}
- * class BST {
- *   +BST()
- *   +~BST()
- *   +find(int value) : Node*
- *   +get_root() : Node*
- *   +get_biggest() : int
- *   +get_depth() : int
- *   +get_smallest() : int
- *   +add_node(int node_value) : void
- *   +delete_node(int value) : void
- *   +display(display_mode mode) : void
- *   +display_tree() : void
- *   +load_from_text_file(std::string path) : void
- *   +purge() : void
- *   +save() : void
- *   -find_helper(Node* node, int value) : Node*
- *   -root : Node*
- *   -get_biggest_helper(Node* node) : int
- *   -get_depth_helper(Node* node) : int
- *   -get_smallest_helper(Node* node) : int
- *   -add_node_helper(int node_value, Node* current_root, Node* temp) : void
- *   -display_inorder(Node* node) : void
- *   -display_postorder(Node* node) : void
- *   -display_preorder(Node* node) : void
- *   -display_tree_helper(Node* node, int depth, int left, int right, std::vector<std::vector<std::string>>& levels) : void
- *   -purge_helper(Node* node) : void
- * }
- *
- * class Node {
- * + int value
- * + Node* right
- * + Node* left
- * + Node* parent
- * + Node()
- * + Node(int)
- * + ~Node()
- * }
- *
- * BST "1" -- "*" Node
- *
- * @enduml
- *
- *
- *
  * \~english
  * @class BST
  * @brief Binary Search Tree class.
