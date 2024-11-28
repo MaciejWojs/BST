@@ -25,6 +25,14 @@
 var NAVTREE =
 [
   [ "Binary Search Tree", "index.html", [
+    [ "Przestrzenie nazw", "namespaces.html", [
+      [ "Lista przestrzeni nazw", "namespaces.html", "namespaces_dup" ],
+      [ "Składowe przestrzeni nazw", "namespacemembers.html", [
+        [ "Wszystko", "namespacemembers.html", null ],
+        [ "Funkcje", "namespacemembers_func.html", null ],
+        [ "Zmienne", "namespacemembers_vars.html", null ]
+      ] ]
+    ] ],
     [ "Klasy", "annotated.html", [
       [ "Lista klas", "annotated.html", "annotated_dup" ],
       [ "Indeks klas", "classes.html", null ],

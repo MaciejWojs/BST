@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['operator_3c_3c_0',['operator&lt;&lt;',['../structNode.html#a7ffd191c0a19e851f95c188ed4ad270c',1,'Node::operator&lt;&lt;'],['../BST_8cpp.html#a8221a03dc8ee04e750ec98be2ac034c8',1,'operator&lt;&lt;():&#160;BST.cpp']]]
+  ['node_0',['Node',['../structNode.html',1,'Node'],['../structNode.html#ad7a34779cad45d997bfd6d3d8043c75f',1,'Node::Node()'],['../structNode.html#a841ba1eeca87d9738c0a21fb3e98f48a',1,'Node::Node(int _value)']]]
 ];

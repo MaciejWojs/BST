@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['right_0',['right',['../structNode.html#a7328862eaa6dea28018326549b3294d3',1,'Node']]],
-  ['root_1',['root',['../classBST.html#a2fe6f9051e991d1b71ead4bd83477a71',1,'BST']]]
+  ['class_5fbody_0',['class_body',['../namespaceconvert.html#a0e4d0148649d3551a6255f329db8eb52',1,'convert']]],
+  ['class_5fname_1',['class_name',['../namespaceconvert.html#a62e5e8a6fefb0452001538915ac55d71',1,'convert']]]
 ];
