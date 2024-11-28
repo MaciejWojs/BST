@@ -29,7 +29,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Binary Search Tree<span id="projectnumber">&#160;v1.1.4</span>
+   <div id="projectname">Binary Search Tree<span id="projectnumber">&#160;v1.1.5</span>
    </div>
    <div id="projectbrief">Implementacja BST w języku C++</div>
   </td>
@@ -135,82 +135,82 @@ $(function(){initNavTree('BST_8hpp_source.html',''); initResizable(true); });
 <div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>};</div>
 </div>
 <div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span> </div>
-<div class="foldopen" id="foldopen00169" data-start="{" data-end="};">
-<div class="line"><a id="l00169" name="l00169"></a><span class="lineno"><a class="line" href="classBST.html">  169</a></span><span class="keyword">class </span><a class="code hl_class" href="classBST.html">BST</a> {</div>
-<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>    <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00171" name="l00171"></a><span class="lineno"><a class="line" href="classBST.html#a2fe6f9051e991d1b71ead4bd83477a71">  171</a></span>    <a class="code hl_struct" href="structNode.html">Node</a>* <a class="code hl_variable" href="classBST.html#a2fe6f9051e991d1b71ead4bd83477a71">root</a>; </div>
-<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classBST.html#afcdf947c0dbc2860c7b9786d96955601">add_node_helper</a>(<span class="keywordtype">int</span> node_value, <a class="code hl_struct" href="structNode.html">Node</a>* current_root, <a class="code hl_struct" href="structNode.html">Node</a>* temp);</div>
-<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span> </div>
-<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classBST.html#a60bc28d3fd377a0a99b2e94375ae2597">purge_helper</a>(<a class="code hl_struct" href="structNode.html">Node</a>* node);</div>
-<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span> </div>
-<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classBST.html#a0331a3c2cea6b610724af23291d8a51b">display_inorder</a>(<a class="code hl_struct" href="structNode.html">Node</a>* node);</div>
-<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span> </div>
-<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classBST.html#ae527ac1b2d63b60ff1224dacbc494dee">display_preorder</a>(<a class="code hl_struct" href="structNode.html">Node</a>* node);</div>
-<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span> </div>
-<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classBST.html#a7491aff095c65f91a9e28b9f970cc2e8">display_postorder</a>(<a class="code hl_struct" href="structNode.html">Node</a>* node);</div>
-<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span> </div>
-<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>    <span class="keywordtype">int</span> <a class="code hl_function" href="classBST.html#a0074c693d23449802df2f510aa127980">get_depth_helper</a>(<a class="code hl_struct" href="structNode.html">Node</a>* node);</div>
-<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span> </div>
-<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span>    <a class="code hl_struct" href="structNode.html">Node</a>* <a class="code hl_function" href="classBST.html#adfd8920948ca6b3014bd7c613c3f3172">get_biggest_helper</a>(<a class="code hl_struct" href="structNode.html">Node</a>* node);</div>
-<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span> </div>
-<div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span>    <a class="code hl_struct" href="structNode.html">Node</a>* <a class="code hl_function" href="classBST.html#a9fa7c6a79ce48588d31f114f0002111b">get_smallest_helper</a>(<a class="code hl_struct" href="structNode.html">Node</a>* node);</div>
-<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span> </div>
-<div class="line"><a id="l00334" name="l00334"></a><span class="lineno">  334</span>    <a class="code hl_struct" href="structNode.html">Node</a>* <a class="code hl_function" href="classBST.html#a2b3ab91d1357f4a536c684fc324f72bd">find_helper</a>(<a class="code hl_struct" href="structNode.html">Node</a>* node, <span class="keywordtype">int</span> value);</div>
-<div class="line"><a id="l00335" name="l00335"></a><span class="lineno">  335</span> </div>
-<div class="line"><a id="l00357" name="l00357"></a><span class="lineno">  357</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classBST.html#aff24ac97e78f541636b24caddb0b5945">display_tree_helper</a>(<a class="code hl_struct" href="structNode.html">Node</a>* node, <span class="keywordtype">int</span> depth, <span class="keywordtype">int</span> left, <span class="keywordtype">int</span> right, std::vector&lt;std::vector&lt;std::string&gt;&gt;&amp; levels);</div>
-<div class="line"><a id="l00358" name="l00358"></a><span class="lineno">  358</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classBST.html#a99e399cc7fa66b0d329ed6fc46d74e57">save_helper</a>(<a class="code hl_struct" href="structNode.html">Node</a>* node, std::vector&lt;int&gt;&amp; result);</div>
-<div class="line"><a id="l00359" name="l00359"></a><span class="lineno">  359</span>    <span class="keyword">public</span>:</div>
-<div class="foldopen" id="foldopen00371" data-start="{" data-end="}">
-<div class="line"><a id="l00371" name="l00371"></a><span class="lineno"><a class="line" href="classBST.html#ab4a657e12fee7a4a0fe17e0182b2492a">  371</a></span>    <a class="code hl_struct" href="structNode.html">Node</a>* <a class="code hl_function" href="classBST.html#ab4a657e12fee7a4a0fe17e0182b2492a">get_root</a>() {</div>
-<div class="line"><a id="l00372" name="l00372"></a><span class="lineno">  372</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classBST.html#a2fe6f9051e991d1b71ead4bd83477a71">root</a>;</div>
-<div class="line"><a id="l00373" name="l00373"></a><span class="lineno">  373</span>    }</div>
+<div class="foldopen" id="foldopen00171" data-start="{" data-end="};">
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno"><a class="line" href="classBST.html">  171</a></span><span class="keyword">class </span><a class="code hl_class" href="classBST.html">BST</a> {</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>    <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno"><a class="line" href="classBST.html#a2fe6f9051e991d1b71ead4bd83477a71">  173</a></span>    <a class="code hl_struct" href="structNode.html">Node</a>* <a class="code hl_variable" href="classBST.html#a2fe6f9051e991d1b71ead4bd83477a71">root</a>; </div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classBST.html#afcdf947c0dbc2860c7b9786d96955601">add_node_helper</a>(<span class="keywordtype">int</span> node_value, <a class="code hl_struct" href="structNode.html">Node</a>* current_root, <a class="code hl_struct" href="structNode.html">Node</a>* temp);</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span> </div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classBST.html#a60bc28d3fd377a0a99b2e94375ae2597">purge_helper</a>(<a class="code hl_struct" href="structNode.html">Node</a>* node);</div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span> </div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classBST.html#a0331a3c2cea6b610724af23291d8a51b">display_inorder</a>(<a class="code hl_struct" href="structNode.html">Node</a>* node);</div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span> </div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classBST.html#ae527ac1b2d63b60ff1224dacbc494dee">display_preorder</a>(<a class="code hl_struct" href="structNode.html">Node</a>* node);</div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span> </div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classBST.html#a7491aff095c65f91a9e28b9f970cc2e8">display_postorder</a>(<a class="code hl_struct" href="structNode.html">Node</a>* node);</div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span> </div>
+<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>    <span class="keywordtype">int</span> <a class="code hl_function" href="classBST.html#a0074c693d23449802df2f510aa127980">get_depth_helper</a>(<a class="code hl_struct" href="structNode.html">Node</a>* node);</div>
+<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span> </div>
+<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>    <a class="code hl_struct" href="structNode.html">Node</a>* <a class="code hl_function" href="classBST.html#adfd8920948ca6b3014bd7c613c3f3172">get_biggest_helper</a>(<a class="code hl_struct" href="structNode.html">Node</a>* node);</div>
+<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span> </div>
+<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span>    <a class="code hl_struct" href="structNode.html">Node</a>* <a class="code hl_function" href="classBST.html#a9fa7c6a79ce48588d31f114f0002111b">get_smallest_helper</a>(<a class="code hl_struct" href="structNode.html">Node</a>* node);</div>
+<div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span> </div>
+<div class="line"><a id="l00336" name="l00336"></a><span class="lineno">  336</span>    <a class="code hl_struct" href="structNode.html">Node</a>* <a class="code hl_function" href="classBST.html#a2b3ab91d1357f4a536c684fc324f72bd">find_helper</a>(<a class="code hl_struct" href="structNode.html">Node</a>* node, <span class="keywordtype">int</span> value);</div>
+<div class="line"><a id="l00337" name="l00337"></a><span class="lineno">  337</span> </div>
+<div class="line"><a id="l00359" name="l00359"></a><span class="lineno">  359</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classBST.html#aff24ac97e78f541636b24caddb0b5945">display_tree_helper</a>(<a class="code hl_struct" href="structNode.html">Node</a>* node, <span class="keywordtype">int</span> depth, <span class="keywordtype">int</span> left, <span class="keywordtype">int</span> right, std::vector&lt;std::vector&lt;std::string&gt;&gt;&amp; levels);</div>
+<div class="line"><a id="l00360" name="l00360"></a><span class="lineno">  360</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classBST.html#a99e399cc7fa66b0d329ed6fc46d74e57">save_helper</a>(<a class="code hl_struct" href="structNode.html">Node</a>* node, std::vector&lt;int&gt;&amp; result);</div>
+<div class="line"><a id="l00361" name="l00361"></a><span class="lineno">  361</span>    <span class="keyword">public</span>:</div>
+<div class="foldopen" id="foldopen00373" data-start="{" data-end="}">
+<div class="line"><a id="l00373" name="l00373"></a><span class="lineno"><a class="line" href="classBST.html#ab4a657e12fee7a4a0fe17e0182b2492a">  373</a></span>    <a class="code hl_struct" href="structNode.html">Node</a>* <a class="code hl_function" href="classBST.html#ab4a657e12fee7a4a0fe17e0182b2492a">get_root</a>() {</div>
+<div class="line"><a id="l00374" name="l00374"></a><span class="lineno">  374</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classBST.html#a2fe6f9051e991d1b71ead4bd83477a71">root</a>;</div>
+<div class="line"><a id="l00375" name="l00375"></a><span class="lineno">  375</span>    }</div>
 </div>
-<div class="line"><a id="l00374" name="l00374"></a><span class="lineno">  374</span> </div>
-<div class="line"><a id="l00382" name="l00382"></a><span class="lineno">  382</span>    <a class="code hl_function" href="classBST.html#abc17123a0367c3b8ad0382eeb3ad3178">BST</a>();</div>
-<div class="line"><a id="l00383" name="l00383"></a><span class="lineno">  383</span> </div>
-<div class="line"><a id="l00391" name="l00391"></a><span class="lineno">  391</span>    <a class="code hl_function" href="classBST.html#aff9c7948fbba37844d2893b920ddc238">~BST</a>();</div>
-<div class="line"><a id="l00392" name="l00392"></a><span class="lineno">  392</span> </div>
-<div class="line"><a id="l00404" name="l00404"></a><span class="lineno">  404</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classBST.html#a38530a88cc3f38e582413742f1579414">add_node</a>(<span class="keywordtype">int</span> node_value);</div>
-<div class="line"><a id="l00405" name="l00405"></a><span class="lineno">  405</span> </div>
-<div class="line"><a id="l00423" name="l00423"></a><span class="lineno">  423</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classBST.html#a4f27aab9ac30f53a07c0a4d038b60622">delete_node</a>(<span class="keywordtype">int</span> value);</div>
-<div class="line"><a id="l00424" name="l00424"></a><span class="lineno">  424</span> </div>
-<div class="line"><a id="l00425" name="l00425"></a><span class="lineno">  425</span> </div>
-<div class="line"><a id="l00437" name="l00437"></a><span class="lineno">  437</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classBST.html#abacd7ba4914718e5db56257a57616554">display</a>(<a class="code hl_enumeration" href="BST_8hpp.html#a538b580ce6370e754b5e9bfdff772eab">display_mode</a> mode);</div>
-<div class="line"><a id="l00438" name="l00438"></a><span class="lineno">  438</span> </div>
-<div class="line"><a id="l00446" name="l00446"></a><span class="lineno">  446</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classBST.html#ab57605c2f6cbe553f00885a8e29525c0">purge</a>();</div>
-<div class="line"><a id="l00447" name="l00447"></a><span class="lineno">  447</span> </div>
-<div class="line"><a id="l00461" name="l00461"></a><span class="lineno">  461</span>    <a class="code hl_struct" href="structNode.html">Node</a>* <a class="code hl_function" href="classBST.html#aa507fc9358d1dd2bef9f684b79e0fd26">find</a>(<span class="keywordtype">int</span> value);</div>
-<div class="line"><a id="l00462" name="l00462"></a><span class="lineno">  462</span> </div>
-<div class="line"><a id="l00470" name="l00470"></a><span class="lineno">  470</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classBST.html#adc7b5abe38090a2d813c1dce3a5a1979">save</a>();</div>
-<div class="line"><a id="l00471" name="l00471"></a><span class="lineno">  471</span> </div>
-<div class="line"><a id="l00489" name="l00489"></a><span class="lineno">  489</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classBST.html#a03aee1af164735fb9af0c2c8ea81b518">load_from_text_file</a>(std::string path);</div>
-<div class="line"><a id="l00490" name="l00490"></a><span class="lineno">  490</span> </div>
-<div class="line"><a id="l00508" name="l00508"></a><span class="lineno">  508</span>    <span class="keywordtype">int</span> <a class="code hl_function" href="classBST.html#a38911fe83ef6e0ee81e9dd4c508d8c72">get_depth</a>();</div>
-<div class="line"><a id="l00509" name="l00509"></a><span class="lineno">  509</span> </div>
-<div class="line"><a id="l00521" name="l00521"></a><span class="lineno">  521</span>    <span class="keywordtype">int</span> <a class="code hl_function" href="classBST.html#aa55cf79549581decec48177272c31c63">get_biggest</a>();</div>
-<div class="line"><a id="l00522" name="l00522"></a><span class="lineno">  522</span> </div>
-<div class="line"><a id="l00534" name="l00534"></a><span class="lineno">  534</span>    <span class="keywordtype">int</span> <a class="code hl_function" href="classBST.html#aaedfae65717e3de45d3afb2268da6dbe">get_smallest</a>();</div>
-<div class="line"><a id="l00535" name="l00535"></a><span class="lineno">  535</span> </div>
-<div class="line"><a id="l00551" name="l00551"></a><span class="lineno">  551</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classBST.html#af1a1696725c0747b07f23d99c6d01bd8">display_tree</a>();</div>
-<div class="line"><a id="l00552" name="l00552"></a><span class="lineno">  552</span> </div>
-<div class="line"><a id="l00553" name="l00553"></a><span class="lineno">  553</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classBST.html#a9b64554cf0885934ef630e07b7a4f142">load_from_binary_file</a>();</div>
+<div class="line"><a id="l00376" name="l00376"></a><span class="lineno">  376</span> </div>
+<div class="line"><a id="l00384" name="l00384"></a><span class="lineno">  384</span>    <a class="code hl_function" href="classBST.html#abc17123a0367c3b8ad0382eeb3ad3178">BST</a>();</div>
+<div class="line"><a id="l00385" name="l00385"></a><span class="lineno">  385</span> </div>
+<div class="line"><a id="l00393" name="l00393"></a><span class="lineno">  393</span>    <a class="code hl_function" href="classBST.html#aff9c7948fbba37844d2893b920ddc238">~BST</a>();</div>
+<div class="line"><a id="l00394" name="l00394"></a><span class="lineno">  394</span> </div>
+<div class="line"><a id="l00406" name="l00406"></a><span class="lineno">  406</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classBST.html#a38530a88cc3f38e582413742f1579414">add_node</a>(<span class="keywordtype">int</span> node_value);</div>
+<div class="line"><a id="l00407" name="l00407"></a><span class="lineno">  407</span> </div>
+<div class="line"><a id="l00425" name="l00425"></a><span class="lineno">  425</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classBST.html#a4f27aab9ac30f53a07c0a4d038b60622">delete_node</a>(<span class="keywordtype">int</span> value);</div>
+<div class="line"><a id="l00426" name="l00426"></a><span class="lineno">  426</span> </div>
+<div class="line"><a id="l00427" name="l00427"></a><span class="lineno">  427</span> </div>
+<div class="line"><a id="l00439" name="l00439"></a><span class="lineno">  439</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classBST.html#abacd7ba4914718e5db56257a57616554">display</a>(<a class="code hl_enumeration" href="BST_8hpp.html#a538b580ce6370e754b5e9bfdff772eab">display_mode</a> mode);</div>
+<div class="line"><a id="l00440" name="l00440"></a><span class="lineno">  440</span> </div>
+<div class="line"><a id="l00448" name="l00448"></a><span class="lineno">  448</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classBST.html#ab57605c2f6cbe553f00885a8e29525c0">purge</a>();</div>
+<div class="line"><a id="l00449" name="l00449"></a><span class="lineno">  449</span> </div>
+<div class="line"><a id="l00463" name="l00463"></a><span class="lineno">  463</span>    <a class="code hl_struct" href="structNode.html">Node</a>* <a class="code hl_function" href="classBST.html#aa507fc9358d1dd2bef9f684b79e0fd26">find</a>(<span class="keywordtype">int</span> value);</div>
+<div class="line"><a id="l00464" name="l00464"></a><span class="lineno">  464</span> </div>
+<div class="line"><a id="l00472" name="l00472"></a><span class="lineno">  472</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classBST.html#adc7b5abe38090a2d813c1dce3a5a1979">save</a>();</div>
+<div class="line"><a id="l00473" name="l00473"></a><span class="lineno">  473</span> </div>
+<div class="line"><a id="l00491" name="l00491"></a><span class="lineno">  491</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classBST.html#a03aee1af164735fb9af0c2c8ea81b518">load_from_text_file</a>(std::string path);</div>
+<div class="line"><a id="l00492" name="l00492"></a><span class="lineno">  492</span> </div>
+<div class="line"><a id="l00510" name="l00510"></a><span class="lineno">  510</span>    <span class="keywordtype">int</span> <a class="code hl_function" href="classBST.html#a38911fe83ef6e0ee81e9dd4c508d8c72">get_depth</a>();</div>
+<div class="line"><a id="l00511" name="l00511"></a><span class="lineno">  511</span> </div>
+<div class="line"><a id="l00523" name="l00523"></a><span class="lineno">  523</span>    <span class="keywordtype">int</span> <a class="code hl_function" href="classBST.html#aa55cf79549581decec48177272c31c63">get_biggest</a>();</div>
+<div class="line"><a id="l00524" name="l00524"></a><span class="lineno">  524</span> </div>
+<div class="line"><a id="l00536" name="l00536"></a><span class="lineno">  536</span>    <span class="keywordtype">int</span> <a class="code hl_function" href="classBST.html#aaedfae65717e3de45d3afb2268da6dbe">get_smallest</a>();</div>
+<div class="line"><a id="l00537" name="l00537"></a><span class="lineno">  537</span> </div>
+<div class="line"><a id="l00553" name="l00553"></a><span class="lineno">  553</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classBST.html#af1a1696725c0747b07f23d99c6d01bd8">display_tree</a>();</div>
 <div class="line"><a id="l00554" name="l00554"></a><span class="lineno">  554</span> </div>
-<div class="line"><a id="l00555" name="l00555"></a><span class="lineno">  555</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classBST.html#aa8a3e418177b3e994c14d7445ab84b29">save_to_binary_file</a>();</div>
-<div class="line"><a id="l00556" name="l00556"></a><span class="lineno">  556</span>};</div>
+<div class="line"><a id="l00555" name="l00555"></a><span class="lineno">  555</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classBST.html#a9b64554cf0885934ef630e07b7a4f142">load_from_binary_file</a>();</div>
+<div class="line"><a id="l00556" name="l00556"></a><span class="lineno">  556</span> </div>
+<div class="line"><a id="l00557" name="l00557"></a><span class="lineno">  557</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classBST.html#aa8a3e418177b3e994c14d7445ab84b29">save_to_binary_file</a>();</div>
+<div class="line"><a id="l00558" name="l00558"></a><span class="lineno">  558</span>};</div>
 </div>
-<div class="line"><a id="l00557" name="l00557"></a><span class="lineno">  557</span> </div>
-<div class="line"><a id="l00558" name="l00558"></a><span class="lineno">  558</span><span class="preprocessor">#endif </span><span class="comment">/* BST_HPP */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00559" name="l00559"></a><span class="lineno">  559</span> </div>
+<div class="line"><a id="l00560" name="l00560"></a><span class="lineno">  560</span><span class="preprocessor">#endif </span><span class="comment">/* BST_HPP */</span><span class="preprocessor"></span></div>
 <div class="ttc" id="aBST_8hpp_html_a538b580ce6370e754b5e9bfdff772eab"><div class="ttname"><a href="BST_8hpp.html#a538b580ce6370e754b5e9bfdff772eab">display_mode</a></div><div class="ttdeci">display_mode</div><div class="ttdoc">Enum reprezentujący kolejność przeglądania.</div><div class="ttdef"><b>Definicja</b> BST.hpp:39</div></div>
 <div class="ttc" id="aBST_8hpp_html_a538b580ce6370e754b5e9bfdff772eaba541a7d029edbe0dc4855fa23ba23162b"><div class="ttname"><a href="BST_8hpp.html#a538b580ce6370e754b5e9bfdff772eaba541a7d029edbe0dc4855fa23ba23162b">INORDER</a></div><div class="ttdeci">@ INORDER</div><div class="ttdoc">Przeglądanie w porządku &quot;in-order&quot;.</div><div class="ttdef"><b>Definicja</b> BST.hpp:40</div></div>
 <div class="ttc" id="aBST_8hpp_html_a538b580ce6370e754b5e9bfdff772eaba9ab94412bf77ddc567d8cb5cd2996d44"><div class="ttname"><a href="BST_8hpp.html#a538b580ce6370e754b5e9bfdff772eaba9ab94412bf77ddc567d8cb5cd2996d44">POSTORDER</a></div><div class="ttdeci">@ POSTORDER</div><div class="ttdoc">Przeglądanie w porządku &quot;post-order&quot;.</div><div class="ttdef"><b>Definicja</b> BST.hpp:42</div></div>
 <div class="ttc" id="aBST_8hpp_html_a538b580ce6370e754b5e9bfdff772eabab1d5eac4b1dca480c8056eaea7663b7a"><div class="ttname"><a href="BST_8hpp.html#a538b580ce6370e754b5e9bfdff772eabab1d5eac4b1dca480c8056eaea7663b7a">ALL</a></div><div class="ttdeci">@ ALL</div><div class="ttdef"><b>Definicja</b> BST.hpp:43</div></div>
 <div class="ttc" id="aBST_8hpp_html_a538b580ce6370e754b5e9bfdff772eabacd9d91cf59c093fdfa2b1736a26125ce"><div class="ttname"><a href="BST_8hpp.html#a538b580ce6370e754b5e9bfdff772eabacd9d91cf59c093fdfa2b1736a26125ce">PREORDER</a></div><div class="ttdeci">@ PREORDER</div><div class="ttdoc">Przeglądanie w porządku &quot;pre-order&quot;.</div><div class="ttdef"><b>Definicja</b> BST.hpp:41</div></div>
-<div class="ttc" id="aclassBST_html"><div class="ttname"><a href="classBST.html">BST</a></div><div class="ttdoc">Klasa reprezentująca drzewo BST.</div><div class="ttdef"><b>Definicja</b> BST.hpp:169</div></div>
+<div class="ttc" id="aclassBST_html"><div class="ttname"><a href="classBST.html">BST</a></div><div class="ttdoc">Klasa reprezentująca drzewo BST.</div><div class="ttdef"><b>Definicja</b> BST.hpp:171</div></div>
 <div class="ttc" id="aclassBST_html_a0074c693d23449802df2f510aa127980"><div class="ttname"><a href="classBST.html#a0074c693d23449802df2f510aa127980">BST::get_depth_helper</a></div><div class="ttdeci">int get_depth_helper(Node *node)</div><div class="ttdoc">Funkcja pomocnicza do obliczania głębokości poddrzewa.</div><div class="ttdef"><b>Definicja</b> BST.cpp:325</div></div>
 <div class="ttc" id="aclassBST_html_a0331a3c2cea6b610724af23291d8a51b"><div class="ttname"><a href="classBST.html#a0331a3c2cea6b610724af23291d8a51b">BST::display_inorder</a></div><div class="ttdeci">void display_inorder(Node *node)</div><div class="ttdoc">Funkcja pomocnicza dla przeglądania i wyświetlania w porządku in-order.</div><div class="ttdef"><b>Definicja</b> BST.cpp:79</div></div>
 <div class="ttc" id="aclassBST_html_a03aee1af164735fb9af0c2c8ea81b518"><div class="ttname"><a href="classBST.html#a03aee1af164735fb9af0c2c8ea81b518">BST::load_from_text_file</a></div><div class="ttdeci">void load_from_text_file(std::string path)</div><div class="ttdoc">Ładuje drzewo BST z pliku tekstowego.</div><div class="ttdef"><b>Definicja</b> BST.cpp:261</div></div>
 <div class="ttc" id="aclassBST_html_a2b3ab91d1357f4a536c684fc324f72bd"><div class="ttname"><a href="classBST.html#a2b3ab91d1357f4a536c684fc324f72bd">BST::find_helper</a></div><div class="ttdeci">Node * find_helper(Node *node, int value)</div><div class="ttdoc">Funkcja pomocnicza do wyszukiwania węzła o określonej wartości w poddrzewie.</div><div class="ttdef"><b>Definicja</b> BST.cpp:281</div></div>
-<div class="ttc" id="aclassBST_html_a2fe6f9051e991d1b71ead4bd83477a71"><div class="ttname"><a href="classBST.html#a2fe6f9051e991d1b71ead4bd83477a71">BST::root</a></div><div class="ttdeci">Node * root</div><div class="ttdoc">Wskaźnik na korzeń drzewa.</div><div class="ttdef"><b>Definicja</b> BST.hpp:171</div></div>
+<div class="ttc" id="aclassBST_html_a2fe6f9051e991d1b71ead4bd83477a71"><div class="ttname"><a href="classBST.html#a2fe6f9051e991d1b71ead4bd83477a71">BST::root</a></div><div class="ttdeci">Node * root</div><div class="ttdoc">Wskaźnik na korzeń drzewa.</div><div class="ttdef"><b>Definicja</b> BST.hpp:173</div></div>
 <div class="ttc" id="aclassBST_html_a38530a88cc3f38e582413742f1579414"><div class="ttname"><a href="classBST.html#a38530a88cc3f38e582413742f1579414">BST::add_node</a></div><div class="ttdeci">void add_node(int node_value)</div><div class="ttdoc">Dodaje nowy węzeł do drzewa BST.</div><div class="ttdef"><b>Definicja</b> BST.cpp:63</div></div>
 <div class="ttc" id="aclassBST_html_a38911fe83ef6e0ee81e9dd4c508d8c72"><div class="ttname"><a href="classBST.html#a38911fe83ef6e0ee81e9dd4c508d8c72">BST::get_depth</a></div><div class="ttdeci">int get_depth()</div><div class="ttdoc">Pobiera głębokość (wysokość) drzewa BST.</div><div class="ttdef"><b>Definicja</b> BST.cpp:321</div></div>
 <div class="ttc" id="aclassBST_html_a4f27aab9ac30f53a07c0a4d038b60622"><div class="ttname"><a href="classBST.html#a4f27aab9ac30f53a07c0a4d038b60622">BST::delete_node</a></div><div class="ttdeci">void delete_node(int value)</div><div class="ttdoc">Usuwa węzeł o określonej wartości z drzewa BST.</div><div class="ttdef"><b>Definicja</b> BST.cpp:361</div></div>
@@ -223,7 +223,7 @@ $(function(){initNavTree('BST_8hpp_source.html',''); initResizable(true); });
 <div class="ttc" id="aclassBST_html_aa55cf79549581decec48177272c31c63"><div class="ttname"><a href="classBST.html#aa55cf79549581decec48177272c31c63">BST::get_biggest</a></div><div class="ttdeci">int get_biggest()</div><div class="ttdoc">Pobiera największą wartość w drzewie BST.</div><div class="ttdef"><b>Definicja</b> BST.cpp:335</div></div>
 <div class="ttc" id="aclassBST_html_aa8a3e418177b3e994c14d7445ab84b29"><div class="ttname"><a href="classBST.html#aa8a3e418177b3e994c14d7445ab84b29">BST::save_to_binary_file</a></div><div class="ttdeci">void save_to_binary_file()</div><div class="ttdef"><b>Definicja</b> BST.cpp:430</div></div>
 <div class="ttc" id="aclassBST_html_aaedfae65717e3de45d3afb2268da6dbe"><div class="ttname"><a href="classBST.html#aaedfae65717e3de45d3afb2268da6dbe">BST::get_smallest</a></div><div class="ttdeci">int get_smallest()</div><div class="ttdoc">Pobiera najmniejszą wartość w drzewie BST.</div><div class="ttdef"><b>Definicja</b> BST.cpp:348</div></div>
-<div class="ttc" id="aclassBST_html_ab4a657e12fee7a4a0fe17e0182b2492a"><div class="ttname"><a href="classBST.html#ab4a657e12fee7a4a0fe17e0182b2492a">BST::get_root</a></div><div class="ttdeci">Node * get_root()</div><div class="ttdoc">Pobiera korzeń drzewa BST.</div><div class="ttdef"><b>Definicja</b> BST.hpp:371</div></div>
+<div class="ttc" id="aclassBST_html_ab4a657e12fee7a4a0fe17e0182b2492a"><div class="ttname"><a href="classBST.html#ab4a657e12fee7a4a0fe17e0182b2492a">BST::get_root</a></div><div class="ttdeci">Node * get_root()</div><div class="ttdoc">Pobiera korzeń drzewa BST.</div><div class="ttdef"><b>Definicja</b> BST.hpp:373</div></div>
 <div class="ttc" id="aclassBST_html_ab57605c2f6cbe553f00885a8e29525c0"><div class="ttname"><a href="classBST.html#ab57605c2f6cbe553f00885a8e29525c0">BST::purge</a></div><div class="ttdeci">void purge()</div><div class="ttdoc">Usuwa wszystkie węzły z drzewa BST.</div><div class="ttdef"><b>Definicja</b> BST.cpp:245</div></div>
 <div class="ttc" id="aclassBST_html_abacd7ba4914718e5db56257a57616554"><div class="ttname"><a href="classBST.html#abacd7ba4914718e5db56257a57616554">BST::display</a></div><div class="ttdeci">void display(display_mode mode)</div><div class="ttdoc">Wyświetla drzewo BST w określonej kolejności.</div><div class="ttdef"><b>Definicja</b> BST.cpp:214</div></div>
 <div class="ttc" id="aclassBST_html_abc17123a0367c3b8ad0382eeb3ad3178"><div class="ttname"><a href="classBST.html#abc17123a0367c3b8ad0382eeb3ad3178">BST::BST</a></div><div class="ttdeci">BST()</div><div class="ttdoc">Domyślny konstruktor dla drzewa BST.</div><div class="ttdef"><b>Definicja</b> BST.cpp:37</div></div>
